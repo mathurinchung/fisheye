@@ -1,17 +1,20 @@
+import PhotographerFactory from "../factories/photographer.js";
+import PhotographerService from "../services/photographer.js";
+
 class App {
-  async displayData(photographers) {
+  displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 
     photographers.forEach(photographer => {
-      const Model = new PhotographerModel(photographer);
-      const userCardDOM = Model.UserCardDOM;
-      photographersSection.innerHTML += userCardDOM;
+      const Template = new PhotographerFactory(photographer);
+      photographersSection.innerHTML += Template.UserCardDOM();
     });
   }
 
   async init() {
     // Récupère les datas des photographes
     const photographers = await PhotographerService.getPhotographers();
+
     this.displayData(photographers);
   }
 }

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("modal.css");
 @import url("photographer.css");
+
+:root {
+  --primary-color: #901C1C;
+  --secondary-color: #D3573C;
+  --ternary-color: #757575;
+}
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -15,8 +22,57 @@ a {
   text-decoration: none;
 }
 
-img {
+img, video {
   object-fit: cover;
+}
+
+.logo {
+  /* height: 50px; */
+  height: 3.472vw;
+  /* margin-left: 100px; */
+  margin-left: 6.944vw;
+}
+
+.portrait {
+  border-radius: 50%;
+  /* height: 200px; */
+  height: 13.889vw;
+  /* width: 200px; */
+  width: 13.889vw;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  /* width: 170px; */
+  width: 11.806vw;
+  /* height: 69px; */
+  height: 4.792vw;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover, .insert {
+  background-color: #DB8876;
+  color: black;
+}
+
+.name {
+  color: var(--secondary-color);
+}
+
+h1, .location, .caption {
+  color: var(--primary-color);
+}
+
+.price {
+  color: var(--ternary-color);
+}
+
+h1, .name, .location, .tagline, .price, .caption {
+  font-weight: 400;
 }
 
 header {
@@ -28,93 +84,11 @@ header {
   height: 9.583vw;
 }
 
-h1 {
+header h1 {
   /* margin-right: 100px; */
   margin-right: 6.944vw;
-  color: #901C1C;
   /* font-size: 36px; */
   font-size: 2.5vw;
-  font-weight: 400;
   /* line-height: 47px; */
   line-height: 3.264vw;
-}
-
-.logo {
-  /* height: 50px; */
-  height: 3.472vw;
-  /* margin-left: 100px; */
-  margin-left: 6.944vw;
-}
-
-#main {
-  /* padding-top: 60px; */
-  padding-top: 4.167vw;
-  /* padding-bottom: 112px; */
-  padding-bottom: 7.778vw;
-}
-
-.photographer_section {
-  /* gap: 75px; */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5.208vw;
-}
-
-.photographer_section article {
-  justify-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.photographer_section article a {
-  text-align: center;
-}
-
-.photographer_section article img {
-  border-radius: 50%;
-  /* height: 200px; */
-  height: 13.889vw;
-  /* width: 200px; */
-  width: 13.889vw;
-}
-
-.photographer_section article h2 {
-  /* margin-top: 20px; */
-  margin-top: 1.389vw;
-  color: #D3573C;
-  /* font-size: 36px; */
-  font-size: 2.5vw;
-  font-weight: 400;
-  /* line-height: 47px; */
-  line-height: 3.264vw;
-}
-
-.photographer_section article h3 {
-  color: #901C1C;
-  font-weight: 400;
-  /* font-size: 13px; */
-  font-size: .903vw;
-  /* line-height: 17px; */
-  line-height: 1.181vw;
-}
-
-.photographer_section article .tagline {
-  /* margin: 3px auto; */
-  margin: 0.208vw auto;
-  /* font-size: 10px; */
-  font-size: .694vw;
-  font-weight: 400;
-  /* line-height: 13px; */
-  line-height: .903vw;
-}
-
-.photographer_section article .price {
-  color: #757575;
-  /* font-size: 9px; */
-  font-size: .625vw;
-  font-weight: 400;
-  /* line-height: 12px; */
-  line-height: .833vw;
 }

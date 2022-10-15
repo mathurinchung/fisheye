@@ -1,23 +1,10 @@
-// Import
-// import PhotographerModel from "../models/photographer.js";
+import PhotographerModel from "../models/photographer.js";
+import PhotographerTemplate from "../templates/photographer.js";
 
-// /**
-//  * 
-//  */
-// export default class PhotographerFactory extends PhotographerModel {
-//   /**
-//    * 
-//    * returns HTMLElement
-//    */
+export default class PhotographerFactory {
+  constructor(data) {
+    this._data = new PhotographerModel(data);
 
-// }
-
-
-// class ServiceFactory {
-//   constructor() {
-//     switch (type) {
-//       case "photographers":
-//         return 
-//     }
-//   }
-// }
+    return new PhotographerTemplate(this._data);
+  }
+}

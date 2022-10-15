@@ -1,22 +1,12 @@
 /**
  * 
  */
-class Api {
-  /**
-   * 
-   * @param {String} url 
-   */
-  constructor(url) {
-    this.url = url;
-  }
+ export default class Api {
+  static _url = "/data/photographers.json";
 
-  /**
-   * 
-   * @returns 
-   */
-  async response() {
+  static async response() {
     try {
-      const response = await fetch(this.url);
+      const response = await fetch(this._url);
 
       if (!response.ok) throw new Error(response);
 
@@ -26,11 +16,7 @@ class Api {
     }
   }
 
-  /**
-   * 
-   * @returns 
-   */
-  get() {
+  static get() {
     return this.response();
   }
 }

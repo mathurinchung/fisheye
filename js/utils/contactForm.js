@@ -1,9 +1,13 @@
-function displayModal() {
-  const modal = document.getElementById("contact_modal");
-  modal.style.display = "block";
-}
+export default class ContactFormUtils {
+  constructor() {
+    this.modal = document.getElementById("contact_modal");
+  }
 
-function closeModal() {
-  const modal = document.getElementById("contact_modal");
-  modal.style.display = "none";
+  displayModal() {
+    this.modal.style.display = "block";
+  }
+
+  closeModal() {
+    this.modal.style.display = "none";
+  }
 }
