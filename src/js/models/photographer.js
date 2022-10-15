@@ -1,7 +1,7 @@
 /**
  * 
  */
-class PhotographerModel {
+export default class PhotographerModel {
   /**
    * 
    * @param {*} data 
@@ -13,7 +13,7 @@ class PhotographerModel {
     this._country = data.country;
     this._tagline = data.tagline;
     this._price = data.price;
-    this._picture = data.portrait;
+    this._portrait = data.portrait;
   }
 
   //
@@ -42,22 +42,7 @@ class PhotographerModel {
   }
 
   //
-  get picture() {
-    return `assets/photographers/${this._picture}`;
-  }
-
-  //
-  get UserCardDOM() {
-    return `
-      <article>
-        <a href="/photographer.html?id=${this.id}">
-          <img src=${this.picture} alt=${this.name} />
-          <h2>${this.name}</h2>
-        </a>
-        <h3>${this.location}</h3>
-        <p class="tagline">${this.tagline}</p>
-        <p class="price">${this.price}€/jour</p>
-      </article>
-    `;
+  get portrait() {
+    return `assets/images/photographers/${this._portrait}`;
   }
 }

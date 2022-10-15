@@ -1,76 +1,161 @@
-#contact_modal {
-  display: none;
+.photographer_header, .photographer_media {
+  /* margin: 0 100px; */
+  margin: 0 6.944vw;
 }
 
-.photograph-header {
-  background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
+
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* gap: 78px; */
+  gap: 5.417vw;
+  /* padding-top: 60px; */
+  padding-top: 4.167vw;
+  /* padding-bottom: 112px; */
+  padding-bottom: 7.778vw;
 }
 
-.contact_button {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.modal {
-  border-radius: 5px;
-  background-color: #DB8876;
-  width: 50%;
+.photographer_section article {
+  justify-self: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin: auto;
+  flex-direction: column;
 }
 
-.modal header {
-  justify-content: space-between;
-  width: 100%;
-}
-
-.modal header img {
-  cursor: pointer;
-}
-
-.modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
+.photographer_section article a {
   text-align: center;
 }
 
-form {
+.photographer_section .name {
+  /* margin-top: 20px; */
+  margin-top: 1.389vw;
+  /* font-size: 36px; */
+  font-size: 2.5vw;
+  /* line-height: 47px; */
+  line-height: 3.264vw;
+}
+
+.photographer_section .location {
+  /* font-size: 13px; */
+  font-size: .903vw;
+  /* line-height: 17px; */
+  line-height: 1.181vw;
+}
+
+.photographer_section .tagline {
+  /* margin: 3px auto; */
+  margin: 0.208vw auto;
+  /* font-size: 10px; */
+  font-size: .694vw;
+  /* line-height: 13px; */
+  line-height: .903vw;
+}
+
+.photographer_section .price {
+  /* font-size: 9px; */
+  font-size: .625vw;
+  /* line-height: 12px; */
+  line-height: .833vw;
+}
+
+
+.photographer_header {
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 50px; */
+  padding: 0 3.472vw;
+  /* height: 313px; */
+  height: 21.736vw;
+  background-color: #FAFAFA;
 }
 
-form label {
-  color: #312E2E;
-  font-size: 36px;
+.photographer_header .name {
+  /* font-size: 64px; */
+  font-size: 4.444vw;
+  /* line-height: 83px; */
+  line-height: 5.764vw;
 }
 
-form div {
+.photographer_header .location {
+  /* font-size: 24px; */
+  font-size: 1.667vw;
+  /* line-height: 31px; */
+  line-height: 2.153vw;
+}
+
+.photographer_header .tagline {
+  /* margin-top: 19px; */
+  margin-top: 1.319vw;
+  /* font-size: 18px; */
+  font-size: 1.25vw;
+  /* line-height: 23px; */
+  line-height: 1.597vw;
+}
+
+.photographer_header .contact_button {
+  /* padding: 21px 11px; */
+  padding: 1.458vw .764vw;
+  /* font-size: 20px; */
+  font-size: 1.389vw;
+  font-weight: 700;
+  /* line-height: 26px; */
+  line-height: 1.806vw;
+}
+
+.insert {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  /* right: 36px; */
+  right: 2.5vw;
+  bottom: 0;
+  z-index: 100;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  /* padding-left: 31px; */
+  padding-left: 2.153vw;
+  /* padding-right: 34px; */
+  padding-right: 2.361vw;
+  /* width: 376px; */
+  width: 26.111vw;
+  /* height: 89px; */
+  height: 6.181vw;
+  /* font-size: 24px; */
+  font-size: 1.667vw;
+  font-weight: 700;
+  /* line-height: 31px; */
+  line-height: 2.153vw;
 }
 
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
+
+.photographer_media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 4.028vw;
+}
+
+.media {
   border-radius: 5px;
+  width: 24.306vw;
+  height: 20.833vw;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .694vw;
+  margin-bottom: 2.083vw;
+  font-size: 1.667vw;
+  line-height: 2.153vw;
+}
+
+.caption .title {
+  overflow: hidden;
+  width: 17.361vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
