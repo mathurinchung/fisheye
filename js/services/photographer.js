@@ -9,7 +9,7 @@ export default class PhotographerService extends Api {
 
   static async getPhotographerById(id) {
     const photographers = await this.getPhotographers();
-    const photographerById = photographers.find(photographer => photographer.id == id)
+    const photographerById = photographers.find(photographer => photographer.id == id);
 
     return photographerById;
   }

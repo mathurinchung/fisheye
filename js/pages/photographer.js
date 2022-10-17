@@ -2,34 +2,33 @@ import PhotographerFactory from "../factories/photographer.js";
 import PhotographerService from "../services/photographer.js";
 import MediaFactory from "../factories/media.js";
 import MediaService from "../services/media.js";
-// import ContactFormUtils from "../utils/contactForm.js";
+import Components from "../templates/components.js";
+import Utils from "../utils/index.js";
 
 class App {
   displayData(photographer, mediaList) {
     const photographerMain = document.querySelector("#main");
-    const photographerHeader = document.querySelector(".photographer_header");
-    const photographerMedia = document.querySelector(".photographer_media");
-    // const openModal = document.querySelector(".contact_button");
-    // const closeModal = document.querySelector(".close");
+    const photographerBanner = document.querySelector(".photographer_banner");
+    const photographerMedia = document.querySelector(".photographer_gallery");
     let likes = 0;
 
     const photographerTemplate = new PhotographerFactory(photographer);
 
-
     document.title = photographerTemplate.UserTitleDOM();
-    photographerHeader.innerHTML = photographerTemplate.UserHeaderDOM();
-    photographerMain.insertAdjacentHTML("afterend", photographerTemplate.UserContactFormDOM());
+    photographerBanner.innerHTML = photographerTemplate.UserBannerDOM();
+    photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM());
+    photographerMedia.insertAdjacentHTML("beforebegin", Components.SortByDropdownDOM());
 
     mediaList.forEach(media => {
       const mediaTemplate = new MediaFactory(media);
       likes += media.likes;
-      photographerHeader.insertAdjacentHTML("beforeend", photographerTemplate.UserInsertDOM(likes));
       photographerMedia.innerHTML += mediaTemplate.MediaCardDOM();
     });
-
-    // const contactForm = new ContactFormUtils();
-    // openModal.addEventListener("click", ContactFormUtils.displayModal);
-    // closeModal.addEventListener("click", ContactFormUtils.closeModal);
+    
+    photographerBanner.insertAdjacentHTML("beforeend", photographerTemplate.UserInsertDOM(likes));
+    
+    Utils.SortBy();
+    Utils.ContactForm();
   }
 
   async init() {
