@@ -1,13 +1,21 @@
 export default class ContactFormUtils {
   constructor() {
-    this.modal = document.getElementById("contact_modal");
+    this._modal = document.querySelector("#contact_modal");
   }
 
-  displayModal() {
-    this.modal.style.display = "block";
+  openModal() {
+    this._modal.style.display = "block";
   }
 
   closeModal() {
-    this.modal.style.display = "none";
+    this._modal.style.display = "none";
+  }
+
+  launcher() {
+    const openButton = document.querySelector(".open");
+    const closeButton = document.querySelector(".close");
+
+    openButton.addEventListener("click", () => this.openModal());
+    closeButton.addEventListener("click", () => this.closeModal());
   }
 }
