@@ -16,7 +16,7 @@ class App {
 
     document.title = photographerTemplate.UserTitleDOM();
     photographerBanner.innerHTML = photographerTemplate.UserBannerDOM();
-    photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM());
+    photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM(photographer.name));
     photographerMedia.insertAdjacentHTML("beforebegin", Components.SortByDropdownDOM());
 
     mediaList.forEach(media => {

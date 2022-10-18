@@ -1,18 +1,30 @@
 export default class Components {
-  static ContactFormDOM() {
+  static ContactFormDOM(name) {
     return `
       <div id="contact_modal">
         <div class="modal">
           <header>
-            <h2>Contactez-moi</h2>
+            <h1>Contactez-moi ${name}</h1>
             <img class="close" src="assets/icons/close.svg" />
           </header>
           <form>
-            <div>
+            <div class="formdata">
               <label>Prénom</label>
               <input />
             </div>
-            <button class="contact_button">Envoyer</button>
+            <div class="formdata">
+              <label>Nom</label>
+              <input />
+            </div>
+            <div class="formdata">
+              <label>Email</label>
+              <input />
+            </div>
+            <div class="formdata message">
+              <label>Votre message</label>
+              <input />
+            </div>
+            <button class="submit-button">Envoyer</button>
           </form>
         </div>
       </div>

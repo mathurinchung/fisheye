@@ -4,10 +4,12 @@ export default class ContactFormUtils {
   }
 
   openModal() {
+    document.body.style.overflow = "hidden";
     this._modal.style.display = "block";
   }
 
   closeModal() {
+    document.body.style.overflow = "auto";
     this._modal.style.display = "none";
   }
 
