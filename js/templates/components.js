@@ -35,11 +35,6 @@ export default class Components {
     return `
       <div class="filters">
         <label for="select">Trier par</label>
-        <!-- <select id="select"> -->
-          <!-- <option value="0">Popularité</option> -->
-          <!-- <option value="1">Date</option> -->
-          <!-- <option value="2">Titre</option> -->
-        <!-- </select> -->
         <div class="filters-dropdown">
           <button class="filters-selected">
             <span class="option-value">Popularité</span>
