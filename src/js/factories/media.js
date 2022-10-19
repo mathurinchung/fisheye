@@ -1,12 +1,15 @@
-import MediaModel from "../models/media.js"
+import ImageModel from "../models/image.js"
+import VideoModel from "../models/video.js"
 import MediaTemplate from "../templates/media.js"
 
 export default class MediaFactory {
   constructor(data) {
-    this._data = new MediaModel(data);
+    if (data.image !== undefined) {
+      this._data = new ImageModel(data);
+    } else {
+      this._data = new VideoModel(data)
+    }
 
-    const type = (this._data.image !== undefined) ? "image" : "video";
-
-    return new MediaTemplate(this._data, type);
+    return new MediaTemplate(this._data);
   }
 }

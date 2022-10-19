@@ -13,6 +13,8 @@ export default class ContactFormUtils {
     this._modal.style.display = "none";
   }
 
+  contactFormHandler() {}
+
   launcher() {
     const openButton = document.querySelector(".open");
     const closeButton = document.querySelector(".close");
