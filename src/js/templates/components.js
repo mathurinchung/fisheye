@@ -10,19 +10,19 @@ export default class Components {
           <form>
             <div class="formdata">
               <label>Prénom</label>
-              <input />
+              <input id="firstname" />
             </div>
             <div class="formdata">
               <label>Nom</label>
-              <input />
+              <input id="lastname" />
             </div>
             <div class="formdata">
               <label>Email</label>
-              <input />
+              <input id="email" />
             </div>
             <div class="formdata message">
               <label>Votre message</label>
-              <input />
+              <input id="message" />
             </div>
             <button class="submit-button">Envoyer</button>
           </form>
@@ -34,22 +34,22 @@ export default class Components {
   static SortByDropdownDOM() {
     return `
       <div class="filters">
-        <label for="select">Trier par</label>
+        <h3>Trier par</h3>
         <div class="filters-dropdown">
           <button class="filters-selected">
-            <span class="option-value">Popularité</span>
+            <span class="filters-value">Popularité</span>
             <i class="fa fa-chevron-down"></i>
           </button>
-          <div class="filters-list">
-            <ul class="filters-items">
+          <div class="filters-container">
+            <ul class="filters-option">
               <li class="filters-item">Popularité</li>
               <li class="filters-item">Date</li>
               <li class="filters-item">Titre</li>
             </ul>
-            <button class="filters-list-close">
+            <button class="filters-close">
               <i class="fa fa-chevron-up"></i>
             </button>
-          </div>
+         </div>
         </div>
       </div>
     `;

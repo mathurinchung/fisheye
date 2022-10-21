@@ -12,5 +12,3 @@ export default class Utils {
     sortByUtils.launcher();
   }
 }
-
-Utils.SortBy();
