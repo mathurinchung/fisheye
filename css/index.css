@@ -135,7 +135,7 @@ button {
   color: black;
   right: 2.5vw;
   bottom: 0;
-  z-index: 100;
+  z-index: 5;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: 0 2.3611111111vw 0 2.1527777778vw;
@@ -170,15 +170,19 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5277777778vw 1.3194444444vw;
-  width: 12.1527777778vw;
+  border-radius: 5px;
+  padding: 1.5277777778vw 1.3888888889vw;
+  width: 11.8055555556vw;
+  background-color: #911C1C;
+  color: white;
+  cursor: pointer;
 }
 
 .filters-value {
   margin-right: 1.8055555556vw;
 }
 
-.filters-container {
+.filters-option {
   position: absolute;
   top: 0;
   display: none;
@@ -207,37 +211,42 @@ button {
   border-bottom: 1px solid white;
 }
 
-.filters-close {
+.filters-button {
   position: absolute;
-  z-index: 100;
+  z-index: 5;
   top: 1.5972222222vw;
-  right: 1.25vw;
+  right: 1.3888888889vw;
   padding: 0;
+  transform: rotate(0deg);
+  transition: transform 0.3s linear;
+}
+
+.filters-button.open {
+  transform: rotate(180deg);
+  transition: transform 0.3s linear;
 }
 
 #contact_modal {
   position: fixed;
   top: 0;
-  z-index: 1001;
+  z-index: 10;
+  overflow: auto;
   display: none;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(196, 196, 196, 0.4);
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   margin: auto;
   border-radius: 5px;
-  padding: 0 2.4305555556vw;
-  width: 46.4583333333vw;
+  padding: 0 35px;
+  width: 669px;
   background-color: #DB8876;
   mix-blend-mode: normal;
   filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
@@ -247,54 +256,83 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin: inherit;
+  margin: 15px 35px 19px;
   width: 100%;
 }
 
 .modal header img {
-  width: 2.9166666667vw;
-  height: 2.9166666667vw;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
 }
 
 .modal header h1 {
-  font-size: 4.4444444444vw;
+  font-size: 64px;
   font-weight: normal;
-  line-height: 5.7638888889vw;
+  line-height: 83px;
 }
 
-form {
-  display: flex;
-  margin: 1.3194444444vw 0 2.6388888889vw;
+.modal-body {
+  margin: 0 0 38px;
   width: 100%;
+}
+
+form .formData {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
 }
 
 form label {
   color: #312E2E;
-  font-size: 2.5vw;
-  line-height: 3.2638888889vw;
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  font-size: 36px;
+  line-height: 47px;
 }
 
 form input {
-  height: 4.7222222222vw;
-  border: none;
+  height: 68px;
+}
+
+form textarea {
+  height: 170px;
+  scrollbar-width: thin;
+  resize: none;
+}
+
+.text-control {
+  border: 2px solid transparent;
   border-radius: 5px;
+  outline: none;
+  padding: 8px 20px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 31px;
 }
 
 form .message {
-  margin: 0.6944444444vw 0 1.8055555556vw;
+  margin: 10px 0 26px;
 }
 
 form .submit-button {
-  padding: 1.5972222222vw 3.4722222222vw;
+  padding: 23px 50px;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.formData[data-error]::after {
+  display: block;
+  margin-top: 0.312vw;
+  margin-bottom: 0.33vw;
+  content: attr(data-error);
+  color: #901C1C;
+  font-size: 14px;
+  line-height: 142.6%;
+  transition: 0.3s;
+}
+
+.formData[data-error] .text-control {
+  border: 3px solid #911C1C;
 }
 
 .photographer_section {
