@@ -5,8 +5,11 @@ export default class SortByUtils {
   }
 
   sortByPopularity() {}
+
   sortByDate() {}
+
   sortByTitle() {}
+
   sortByHandler() {}
 
   openFilters() {
