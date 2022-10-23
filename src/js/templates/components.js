@@ -62,10 +62,8 @@ export default class Components {
           <button class="lightbox-close close"></button>
           <button class="previous"><i class="fa fa-chevron-left"></i></button>
           <div class="lightbox-container">
-            <div class="lightbox-media">
-              ...
-            </div>
-            <p class="lightbox-caption">...</p>
+            <div class="lightbox-media"></div>
+            <p class="lightbox-caption"></p>
           </div>
           <button class="next"><i class="fa fa-chevron-right"></i></button>
         </div>

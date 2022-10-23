@@ -33,10 +33,10 @@ export default class PhotographerTemplate {
     `;
   }
 
-  UserInsertDOM(likes) {
+  UserInsertDOM() {
     return `
       <div class="insert">
-        <span class="insert-likes">${likes} <i class="fa fa-heart"></i></span>
+        <span class="insert-likes"></span>
         <span class="insert-price">${this._data.price}€ / jour</span>
       </div>
     `;

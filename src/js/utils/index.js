@@ -1,6 +1,7 @@
 import ContactFormUtils from "../utils/contactForm.js";
 import SortByUtils from "../utils/sortBy.js";
 import LightBoxUtils from "../utils/lightBox.js";
+import LikesUtils from "../utils/likes.js";
 
 export default class Utils {
   static ContactForm() {
@@ -16,5 +17,10 @@ export default class Utils {
   static LightBox() {
     const lightBoxUtils = new LightBoxUtils("#lightbox");
     lightBoxUtils.launch();
+  }
+
+  static Likes() {
+    const likesUtils = new LikesUtils();
+    likesUtils.launch();
   }
 }

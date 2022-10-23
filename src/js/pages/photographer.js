@@ -16,14 +16,14 @@ class App {
     
     document.title = photographerTemplate.UserTitleDOM();
     photographerBanner.innerHTML = photographerTemplate.UserBannerDOM();
+    photographerBanner.insertAdjacentHTML("beforeend", photographerTemplate.UserInsertDOM());
 
     mediaList.map(media => {
       const mediaTemplate = new MediaFactory(media);
       likes += media.likes;
       photographerMedia.innerHTML += mediaTemplate.MediaCardDOM();
     });
-    
-    photographerBanner.insertAdjacentHTML("beforeend", photographerTemplate.UserInsertDOM(likes));
+
     photographerMedia.insertAdjacentHTML("beforebegin", Components.SortByDropdownDOM());
     photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM(photographer.name));
     photographerMain.insertAdjacentHTML("afterend", Components.LightBoxDOM());
@@ -31,6 +31,7 @@ class App {
     Utils.SortBy();
     Utils.ContactForm();
     Utils.LightBox();
+    Utils.Likes();
   }
 
   async init() {

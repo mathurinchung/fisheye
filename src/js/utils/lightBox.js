@@ -4,6 +4,7 @@ export default class LightBoxUtils extends ModalUtils {
   constructor(modal) {
     super(modal)
     this._gallery = [ ...document.querySelectorAll("[data-id]") ];
+    this._currentIndex = -1;
     this._currentItem = "";
   }
   
