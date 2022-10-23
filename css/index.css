@@ -191,6 +191,7 @@ img {
 .filters-option {
   position: absolute;
   top: 0;
+  z-index: 10;
   display: none;
   border-radius: 5px;
   width: 100%;
@@ -219,7 +220,7 @@ img {
 
 .filters-button {
   position: absolute;
-  z-index: 5;
+  z-index: 15;
   top: 1.5972222222vw;
   right: 1.3888888889vw;
   padding: 0;
@@ -235,7 +236,7 @@ img {
 .modal-bg {
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 15;
   overflow: auto;
   display: none;
   justify-content: center;
