@@ -10,12 +10,14 @@ export default class LikesUtils {
 
     if (currentLike.dataset.like === "false") {
       currentLike.dataset.like = true;
+      currentLike.dataset.likes = parseInt(likes) + 1;
       currentLike.querySelector(".caption .likes").innerHTML = `${parseInt(likes) + 1} <i class="fa fa-heart"></i>`
 
       this._likes++;
       this.insertLikes.innerHTML = `${this._likes} <i class="fa fa-heart"></i>`
     } else {
       currentLike.dataset.like = false;
+      currentLike.dataset.likes = parseInt(likes) - 1;
       currentLike.querySelector(".caption .likes").innerHTML = `${parseInt(likes) - 1} <i class="far fa-heart"></i>`
 
       this._likes--;
