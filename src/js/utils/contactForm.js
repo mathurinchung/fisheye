@@ -1,21 +1,7 @@
+import ModalUtils from "./modal.js";
 import CheckIsInvalid from "./checkIsInvalid.js";
 
-export default class ContactFormUtils {
-  constructor() {
-    this._modal = document.querySelector("#contact_modal");
-    // this._formData = [ ...document.querySelectorAll(".formData") ];
-  }
-
-  openModal() {
-    document.body.style.overflow = "hidden";
-    this._modal.style.display = "flex";
-  }
-
-  closeModal() {
-    document.body.style.overflow = "auto";
-    this._modal.style.display = "none";
-  }
-
+export default class ContactFormUtils extends ModalUtils {
   isInvalid() {
     const formData = [ ...document.querySelectorAll(".formData") ];
     const check = new CheckIsInvalid(formData);
@@ -24,7 +10,7 @@ export default class ContactFormUtils {
   }
 
   contactFormHandler(e) {
-    const form = document.querySelector("#form");
+    const form = document.querySelector("#contact-form");
     const formData = new FormData(form);
     const result = Object.fromEntries(formData.entries());
 
@@ -38,14 +24,10 @@ export default class ContactFormUtils {
   }
 
   launch() {
-    const openButton = document.querySelector(".open");
-    const closeButton = document.querySelector(".close");
+    const openButton = document.querySelector(".btn-contact.open");
     const submitButton = document.querySelector(".submit-button");
 
     openButton.addEventListener("click", () => this.openModal());
-    closeButton.addEventListener("click", () => this.closeModal());
     submitButton.addEventListener("click", this.contactFormHandler.bind(this));
   }
 }
-
-// localhost:8080/photographer.html?id=243

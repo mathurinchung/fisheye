@@ -152,6 +152,12 @@ button {
   height: 20.8333333333vw;
 }
 
+img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+}
+
 .filters {
   display: flex;
   align-items: center;
@@ -226,7 +232,7 @@ button {
   transition: transform 0.3s linear;
 }
 
-#contact_modal {
+.modal-bg {
   position: fixed;
   top: 0;
   z-index: 10;
@@ -236,23 +242,29 @@ button {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(196, 196, 196, 0.4);
 }
 
 .modal {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: auto;
+}
+
+#contact {
+  background-color: rgba(196, 196, 196, 0.4);
+}
+
+#contact .modal {
+  flex-direction: column;
   border-radius: 5px;
   padding: 0 35px;
   width: 669px;
+  height: auto;
   background-color: #DB8876;
   mix-blend-mode: normal;
   filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
 }
 
-.modal header {
+#contact header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -260,13 +272,13 @@ button {
   width: 100%;
 }
 
-.modal header img {
+#contact header img {
   width: 42px;
   height: 42px;
   cursor: pointer;
 }
 
-.modal header h1 {
+#contact header h1 {
   font-size: 64px;
   font-weight: normal;
   line-height: 83px;
@@ -277,29 +289,28 @@ button {
   width: 100%;
 }
 
-form .formData {
+#contact-form .formData {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
-form label {
+#contact-form label {
   color: #312E2E;
   font-size: 36px;
   line-height: 47px;
 }
 
-form input {
+#contact-form input {
   height: 68px;
 }
 
-form textarea {
+#contact-form textarea {
   height: 170px;
   scrollbar-width: thin;
   resize: none;
 }
 
-.text-control {
+#contact-form .text-control {
   border: 2px solid transparent;
   border-radius: 5px;
   outline: none;
@@ -310,20 +321,19 @@ form textarea {
   line-height: 31px;
 }
 
-form .message {
+#contact-form .message {
   margin: 10px 0 26px;
 }
 
-form .submit-button {
+#contact-form .submit-button {
   padding: 23px 50px;
   font-size: 18px;
   line-height: 23px;
 }
 
-.formData[data-error]::after {
+#contact-form .formData[data-error]::after {
   display: block;
-  margin-top: 0.312vw;
-  margin-bottom: 0.33vw;
+  margin: 8px 0;
   content: attr(data-error);
   color: #901C1C;
   font-size: 14px;
@@ -331,8 +341,70 @@ form .submit-button {
   transition: 0.3s;
 }
 
-.formData[data-error] .text-control {
+#contact-form .formData[data-error] .text-control {
   border: 3px solid #911C1C;
+}
+
+#lightbox {
+  background-color: white;
+}
+
+#lightbox .modal {
+  position: relative;
+  justify-content: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: -5px;
+  width: 42px;
+  height: 42px;
+}
+
+.lightbox-close::before, .lightbox-close::after {
+  position: relative;
+  top: 2px;
+  left: -6px;
+  display: block;
+  content: "";
+  background-color: #911C1C;
+  height: 6px;
+  width: 53px;
+}
+
+.lightbox-close::before {
+  transform: rotate(45deg);
+}
+
+.lightbox-close::after {
+  top: -4px;
+  transform: rotate(-45deg);
+}
+
+.lightbox-container {
+  margin: 0 34.36px;
+}
+
+.modal .media {
+  width: 1050px;
+  height: 900px;
+}
+
+#lightbox .modal button {
+  padding: 0;
+  background-color: transparent;
+  color: #911C1C;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.lightbox-caption {
+  margin-top: 12px;
+  color: #911C1C;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
 }
 
 .photographer_section {

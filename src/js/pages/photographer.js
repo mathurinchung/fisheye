@@ -13,22 +13,24 @@ class App {
     let likes = 0;
 
     const photographerTemplate = new PhotographerFactory(photographer);
-
+    
     document.title = photographerTemplate.UserTitleDOM();
     photographerBanner.innerHTML = photographerTemplate.UserBannerDOM();
-    photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM(photographer.name));
-    photographerMedia.insertAdjacentHTML("beforebegin", Components.SortByDropdownDOM());
 
-    mediaList.forEach(media => {
+    mediaList.map(media => {
       const mediaTemplate = new MediaFactory(media);
       likes += media.likes;
       photographerMedia.innerHTML += mediaTemplate.MediaCardDOM();
     });
     
     photographerBanner.insertAdjacentHTML("beforeend", photographerTemplate.UserInsertDOM(likes));
-    
+    photographerMedia.insertAdjacentHTML("beforebegin", Components.SortByDropdownDOM());
+    photographerMain.insertAdjacentHTML("afterend", Components.ContactFormDOM(photographer.name));
+    photographerMain.insertAdjacentHTML("afterend", Components.LightBoxDOM());
+
     Utils.SortBy();
     Utils.ContactForm();
+    Utils.LightBox();
   }
 
   async init() {

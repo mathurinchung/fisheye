@@ -5,8 +5,8 @@ export default class MediaTemplate {
 
   MediaCardDOM() {
     return `
-      <article>
-        <a href="">
+      <article data-id="${this._data.id}">
+        <a class="lnk-media open" href="javascript:void(0)">
           ${this._data.media}
         </a>
         <p class="caption">

@@ -7,6 +7,10 @@ export default class ImageModel extends MediaModel {
   }
 
   get media() {
-    return `<img class="media" src="${this.path + this._image}" />`;
+    return `
+      <figure class="media">
+        <img src="${this.path + this._image}" alt="${this.title}" />
+      </figure>
+    `;
   }
 }
