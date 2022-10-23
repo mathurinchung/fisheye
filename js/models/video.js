@@ -10,8 +10,9 @@ export default class VideoModel extends MediaModel {
     const extension = this._video.split(".")[1];
 
     return `
-    <video class="media">
-      <source src="${this.path + this._video}" type="video/${extension}" />
-    </video>`;
+      <video class="media">
+        <source src="${this.path + this._video}" type="video/${extension}" />
+      </video>
+    `;
   }
 }

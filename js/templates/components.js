@@ -1,14 +1,14 @@
 export default class Components {
   static ContactFormDOM(name) {
     return `
-      <div id="contact_modal" class="modal-bg">
+      <div id="contact" class="modal-bg">
         <div class="modal">
           <header>
             <h1>Contactez-moi ${name}</h1>
             <img class="close" src="assets/icons/close.svg" />
           </header>
           <div class="modal-body">
-            <form id="form" name="contact" action="#" method="post" novalidate>
+            <form id="contact-form" name="contact" action="#" method="post" novalidate>
               <div class="formData">
                 <label>Prénom</label>
                 <input id="firstname" class="text-control" name="firstname" type="text" required />
@@ -50,6 +50,24 @@ export default class Components {
             <li class="filters-item">Date</li>
             <li class="filters-item">Titre</li>
           </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  static LightBoxDOM() {
+    return `
+      <div id="lightbox" class="modal-bg">
+        <div class="modal">
+          <button class="lightbox-close close"></button>
+          <button class="previous"><i class="fa fa-chevron-left"></i></button>
+          <div class="lightbox-container">
+            <div class="lightbox-media">
+              ...
+            </div>
+            <p class="lightbox-caption">...</p>
+          </div>
+          <button class="next"><i class="fa fa-chevron-right"></i></button>
         </div>
       </div>
     `;
