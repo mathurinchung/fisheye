@@ -3,4 +3,7 @@ sass
 
 package-*.json
 
+index.css
+index.css.map
+
 note.md
