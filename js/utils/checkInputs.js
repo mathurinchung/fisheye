@@ -24,10 +24,10 @@ export default class CheckInputs extends FormData {
    */
   checkEmail(formdata) {
     const email = formdata.querySelector("input").value;
-    const regex = /[a-z0-9.-_]+@[a-z0-9]+\.[a-z]{2,3}/;
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email === "") throw new Error("Veuillez remplir ce champ");
-    else if (regex.test(email) === false) throw new Error("Veuillez entrer un email valide");
+    else if (regex.test(email.trim()) === false) throw new Error("Veuillez entrer un email valide");
   }
 
   /**

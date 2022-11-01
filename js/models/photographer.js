@@ -17,32 +17,20 @@ export default class PhotographerModel {
   }
 
   //
-  get name() {
-    return this._name;
-  }
+  get name() { return this._name; }
 
   //
-  get id() {
-    return this._id;
-  }
+  get id() { return this._id; }
 
   //
-  get location() {
-    return `${this._city}, ${this._country}`;
-  }
+  get location() { return `${this._city}, ${this._country}`; }
 
   //
-  get tagline() {
-    return this._tagline;
-  }
+  get tagline() { return this._tagline; }
 
   //
-  get price() {
-    return this._price;
-  }
+  get price() { return this._price; }
 
   //
-  get portrait() {
-    return `assets/images/photographers/${this._portrait}`;
-  }
+  get portrait() { return `assets/photographers/${this._portrait}`; }
 }

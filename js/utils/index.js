@@ -1,26 +1,26 @@
-import ContactFormUtils from "../utils/contactForm.js";
-import SortByUtils from "../utils/sortBy.js";
-import LightBoxUtils from "../utils/lightBox.js";
-import LikesUtils from "../utils/likes.js";
+import Subject from "./subject.js";
+import ContactFormUtils from "./contactForm.js";
+import SortByUtils from "./sortBy.js";
+import LightBoxUtils from "./lightBox.js";
+import LikesUtils from "./likes.js";
 
+/**
+ * 
+ */
 export default class Utils {
-  static ContactForm() {
+  static handler() {
+    const gallery = [ ...document.querySelectorAll("[data-id]") ];
+
+    const subject = new Subject();
     const contactFormUtils = new ContactFormUtils("#contact");
-    contactFormUtils.launch();
-  }
-
-  static SortBy() {
-    const sortByUtils = new SortByUtils();
-    sortByUtils.launch();
-  }
-
-  static LightBox() {
-    const lightBoxUtils = new LightBoxUtils("#lightbox");
-    lightBoxUtils.launch();
-  }
-
-  static Likes() {
+    const sortByUtils = new SortByUtils(gallery);
+    const lightBoxUtils = new LightBoxUtils("#lightbox", gallery);
     const likesUtils = new LikesUtils();
-    likesUtils.launch();
+
+    subject.attach(contactFormUtils);
+    subject.attach(sortByUtils);
+    subject.attach(lightBoxUtils);
+    subject.attach(likesUtils);
+    subject.notify();
   }
 }

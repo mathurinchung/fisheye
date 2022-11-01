@@ -1,13 +1,24 @@
+/**
+ * 
+ */
 export default class PhotographerTemplate {
+  /**
+   * 
+   * @param {*} data 
+   */
   constructor(data) {
     this._data = data;
   }
 
+  /**
+   * 
+   * @returns 
+   */
   UserCardDOM() {
     return `
-      <article>
+      <article class="photographer" data-id="${this._data.id}" data-name="${this._data.name}">
         <a href="/photographer.html?id=${this._data.id}">
-          <img class="portrait" src=${this._data.portrait} alt=${this._data.name} />
+          <img class="portrait" src="${this._data.portrait}" alt="${this._data.name}" />
           <h2 class="name">${this._data.name}</h2>
         </a>
         <p class="location">${this._data.location}</p>
@@ -17,22 +28,32 @@ export default class PhotographerTemplate {
     `;
   }
 
-  UserTitleDOM() {
-    return `Fisheye - ${this._data.name}`;
-  }
+  /**
+   * 
+   * @returns 
+   */
+  UserTitleDOM() { return `Fisheye - ${this._data.name}`; }
 
+  /**
+   * 
+   * @returns 
+   */
   UserBannerDOM() {
     return `
-      <div>
+      <div class="info">
         <h1 class="name">${this._data.name}</h1>
         <p class="location">${this._data.location}</p>
         <p class="tagline">${this._data.tagline}</p>
       </div>
-      <button class="btn btn-contact open">Contactez-moi</button>
-      <img class="portrait" src=${this._data.portrait} alt=${this.name} />
+      <button class="btn btn-contact open" type="button">Contactez-moi</button>
+      <img class="portrait" src=${this._data.portrait} alt="${this.name}" />
     `;
   }
 
+  /**
+   * 
+   * @returns 
+   */
   UserInsertDOM() {
     return `
       <div class="insert">
