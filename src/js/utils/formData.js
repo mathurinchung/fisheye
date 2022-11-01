@@ -30,9 +30,11 @@ export default class FormData {
       fn(formdata);
 
       formdata.removeAttribute("data-error");
+      formdata.removeAttribute("aria-invalid");
       return false;
     } catch (error) {
-      formdata.setAttribute("data-error", error.message);
+      formdata.setAttribute("data-error", "* " + error.message);
+      formdata.setAttribute("aria-invalid", error.message);
       return true;
     }
   }

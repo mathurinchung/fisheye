@@ -28,11 +28,9 @@ img, video {
   padding: 0 6.9444444444vw 0;
   height: 9.5833333333vw;
 }
-
 #header .logo {
   height: 3.4722222222vw;
 }
-
 #header h1 {
   color: #901C1C;
   font-size: 2.5vw;
@@ -40,7 +38,7 @@ img, video {
   line-height: 3.2638888889vw;
 }
 
-.photographer_banner {
+.photographer-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,53 +48,51 @@ img, video {
   height: 21.7361111111vw;
   background-color: #FAFAFA;
 }
-
-.photographer_banner .name {
+.photographer-banner .name {
   font-size: 4.4444444444vw;
   font-weight: 400;
   line-height: 5.7638888889vw;
 }
-
-.photographer_banner .location {
+.photographer-banner .location {
   font-size: 1.6666666667vw;
   font-weight: 400;
   line-height: 2.1527777778vw;
 }
-
-.photographer_banner .tagline {
+.photographer-banner .tagline {
   margin-top: 1.3194444444vw;
   font-size: 1.25vw;
   font-weight: 400;
   line-height: 1.5972222222vw;
 }
-
-.photographer_banner .btn-contact {
+.photographer-banner .btn-contact {
   padding: 1.4583333333vw 0.7638888889vw;
   font-size: 1.3888888889vw;
   font-weight: 700;
   line-height: 1.8055555556vw;
 }
 
-.photographer_gallery {
-  display: flex;
-  flex-wrap: wrap;
+.photographer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 24.3055555556vw);
+  row-gap: 2.0833333333vw;
   justify-content: space-between;
-  margin: 1.5972222222vw 6.9444444444vw 0;
+  margin: 1.5972222222vw 6.9444444444vw 5.2083333333vw;
 }
-
-.caption {
+.photographer-gallery .lnk-media {
+  display: inline-block;
+}
+.photographer-gallery .caption {
   display: flex;
   justify-content: space-between;
-  margin: 0.6944444444vw 0 2.0833333333vw;
+  padding-top: 0.6944444444vw;
   color: #901C1C;
   font-size: 1.6666666667vw;
   font-weight: 400;
   line-height: 2.1527777778vw;
 }
-
-.caption .title {
+.photographer-gallery .caption .title {
   overflow: hidden;
-  width: 20.1388888889vw;
+  width: 19.4444444444vw;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -114,9 +110,16 @@ button {
   cursor: pointer;
 }
 
-.btn-contact:hover {
+.btn-contact:hover, .btn-contact:focus {
   background-color: #DB8876;
   color: black;
+}
+
+.icon-close {
+  width: 42px;
+  height: 42px;
+  mask: url("/assets/icons/close.svg");
+  -webkit-mask: url("/assets/icons/close.svg");
 }
 
 .portrait {
@@ -195,24 +198,15 @@ img {
   display: none;
   border-radius: 5px;
   width: 100%;
-  padding: 1.5277777778vw 0.6944444444vw;
+  padding: 0.5555555556vw 0.6944444444vw;
   background-color: #911C1C;
   color: white;
 }
 
 .filters-item {
-  padding: 0 0.6944444444vw;
+  padding: 0.9722222222vw 0.6944444444vw;
   cursor: pointer;
 }
-
-.filters-item:last-child, .filters-item:nth-child(2) {
-  padding-top: 0.9722222222vw;
-}
-
-.filters-item:first-child, .filters-item:nth-child(2) {
-  padding-bottom: 0.9722222222vw;
-}
-
 .filters-item:nth-child(2) {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
@@ -227,7 +221,6 @@ img {
   transform: rotate(0deg);
   transition: transform 0.3s linear;
 }
-
 .filters-button.open {
   transform: rotate(180deg);
   transition: transform 0.3s linear;
@@ -239,8 +232,6 @@ img {
   z-index: 15;
   overflow: auto;
   display: none;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -248,71 +239,66 @@ img {
 .modal {
   display: flex;
   align-items: center;
+  margin: 58px auto;
 }
 
 #contact {
   background-color: rgba(196, 196, 196, 0.4);
 }
-
 #contact .modal {
   flex-direction: column;
   border-radius: 5px;
-  padding: 0 35px;
-  width: 669px;
-  height: auto;
+  padding: 15px 35px 38px;
+  width: 100%;
+  max-width: 669px;
   background-color: #DB8876;
   mix-blend-mode: normal;
   filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
 }
-
-#contact header {
+#contact .modal header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin: 15px 35px 19px;
+  padding-bottom: 19px;
   width: 100%;
 }
-
-#contact header img {
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-}
-
-#contact header h1 {
+#contact .modal header h1 {
   font-size: 64px;
   font-weight: normal;
   line-height: 83px;
 }
-
-.modal-body {
-  margin: 0 0 38px;
+#contact .modal header .contact-close {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  padding: 0;
+  background-color: inherit;
+}
+#contact .modal header .contact-close .icon-close {
+  background-color: white;
+}
+#contact .modal .modal-body {
   width: 100%;
 }
-
-#contact-form .formData {
+#contact .modal .modal-body .formData {
   display: flex;
   flex-direction: column;
 }
-
-#contact-form label {
+#contact .modal .modal-body .formData label {
   color: #312E2E;
   font-size: 36px;
   line-height: 47px;
 }
-
-#contact-form input {
+#contact .modal .modal-body .formData input {
   height: 68px;
 }
-
-#contact-form textarea {
+#contact .modal .modal-body .formData textarea {
   height: 170px;
   scrollbar-width: thin;
   resize: none;
 }
-
-#contact-form .text-control {
-  border: 2px solid transparent;
+#contact .modal .modal-body .formData .text-control {
+  border: 3px solid transparent;
   border-radius: 5px;
   outline: none;
   padding: 8px 20px;
@@ -321,83 +307,62 @@ img {
   font-size: 24px;
   line-height: 31px;
 }
-
-#contact-form .message {
+#contact .modal .modal-body .formData.message {
   margin: 10px 0 26px;
 }
-
-#contact-form .submit-button {
+#contact .modal .modal-body .formData[data-error]::after {
+  display: block;
+  margin: 8px 0;
+  content: attr(data-error);
+  color: #901C1C;
+  font-size: 18px;
+  line-height: 23px;
+  transition: 0.3s;
+}
+#contact .modal .modal-body .formData[data-error]::after .text-control {
+  border: 3px solid #911C1C;
+}
+#contact .modal .modal-body .submit-button {
   padding: 23px 50px;
   font-size: 18px;
   line-height: 23px;
 }
 
-#contact-form .formData[data-error]::after {
-  display: block;
-  margin: 8px 0;
-  content: attr(data-error);
-  color: #901C1C;
-  font-size: 14px;
-  line-height: 142.6%;
-  transition: 0.3s;
-}
-
-#contact-form .formData[data-error] .text-control {
-  border: 3px solid #911C1C;
-}
-
 #lightbox {
   background-color: white;
 }
-
 #lightbox .modal {
   position: relative;
   justify-content: center;
+  width: 1253px;
 }
-
-.lightbox-close {
-  position: absolute;
-  top: 15px;
-  right: -5px;
-  width: 42px;
-  height: 42px;
-}
-
-.lightbox-close::before, .lightbox-close::after {
-  position: relative;
-  top: 2px;
-  left: -6px;
-  display: block;
-  content: "";
-  background-color: #911C1C;
-  height: 6px;
-  width: 53px;
-}
-
-.lightbox-close::before {
-  transform: rotate(45deg);
-}
-
-.lightbox-close::after {
-  top: -4px;
-  transform: rotate(-45deg);
-}
-
-.lightbox-container {
-  margin: 0 34.36px;
-}
-
-.modal .media {
+#lightbox .modal .media {
   width: 1050px;
   height: 900px;
 }
-
 #lightbox .modal button {
   padding: 0;
   background-color: transparent;
   color: #911C1C;
   font-size: 48px;
   line-height: 48px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  z-index: 100;
+  display: flex;
+  width: 42px;
+  height: 42px;
+}
+.lightbox-close .icon-close {
+  background-color: #911C1C;
+}
+
+.lightbox-container {
+  margin: 0 34.36px;
 }
 
 .lightbox-caption {
@@ -408,46 +373,42 @@ img {
   line-height: 31px;
 }
 
-.photographer_section {
+.photographer-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5.4166666667vw;
   padding: 4.1666666667vw 0 7.7777777778vw;
 }
-
-.photographer_section article {
+.photographer-section article {
   display: flex;
   justify-content: center;
   justify-self: center;
   align-items: center;
   flex-direction: column;
 }
-
-.photographer_section article a {
+.photographer-section article a {
+  width: 21.5277777778vw;
+  height: 19.2361111111vw;
   text-align: center;
 }
-
-.photographer_section .name {
+.photographer-section article a .name {
   margin-top: 1.3888888889vw;
   font-size: 2.5vw;
   font-weight: 400;
   line-height: 3.2638888889vw;
 }
-
-.photographer_section .location {
+.photographer-section article .location {
   font-size: 0.9027777778vw;
   font-weight: 400;
   line-height: 1.1805555556vw;
 }
-
-.photographer_section .tagline {
+.photographer-section article .tagline {
   margin: 0.2083333333vw auto;
   font-size: 0.6944444444vw;
   font-weight: 400;
   line-height: 0.9027777778vw;
 }
-
-.photographer_section .price {
+.photographer-section article .price {
   font-size: 0.625vw;
   font-weight: 400;
   line-height: 0.8333333333vw;

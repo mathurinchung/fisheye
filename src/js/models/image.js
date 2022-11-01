@@ -1,11 +1,19 @@
 import MediaModel from "../models/media.js"
 
+/**
+ * 
+ */
 export default class ImageModel extends MediaModel {
+  /**
+   * 
+   * @param {*} data 
+   */
   constructor(data) {
     super(data);
     this._image = data.image;
   }
 
+  //
   get media() {
     return `
       <figure class="media">
