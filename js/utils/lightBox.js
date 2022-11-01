@@ -9,7 +9,7 @@ export default class LightBoxUtils extends ModalUtils {
    * @param {*} modal 
    */
   constructor(modal, gallery) {
-    super(modal)
+    super(modal);
     this._gallery = gallery;
     this._currentIndex = -1;
     this._currentItem = "";
@@ -82,13 +82,13 @@ export default class LightBoxUtils extends ModalUtils {
     document.addEventListener("keydown", e => {
       const keyCode = e.key;
       switch (keyCode) {
-        case "ArrowRight": this.next();
+      case "ArrowRight": this.next();
         break;
 
-        case "ArrowLeft": this.prev();
+      case "ArrowLeft": this.prev();
         break;
 
-        case "Escape": this.closeModal();
+      case "Escape": this.closeModal();
         break;
       }
     });

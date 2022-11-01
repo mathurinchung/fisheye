@@ -53,13 +53,13 @@ export default class SortByUtils {
    */
   sortByHandler(filtersValue) {
     switch (filtersValue) {
-      case "Popularité": this._gallery.sort(this.#sortByPopularity);
+    case "Popularité": this._gallery.sort(this.#sortByPopularity);
       break;
 
-      case "Date": this._gallery.sort(this.#sortByDate);
+    case "Date": this._gallery.sort(this.#sortByDate);
       break;
 
-      case "Titre": this._gallery.sort(this.#sortByTitle);
+    case "Titre": this._gallery.sort(this.#sortByTitle);
       break;
     }
 
@@ -82,9 +82,9 @@ export default class SortByUtils {
     this._option.style.display = "none";
   }
 
-  filtersItemHandler(item, filtersValue, filtersOption, filtersSelected, open) {
+  filtersItemHandler(item, filtersValue, filtersOption, filtersSelected) {
     filtersValue.textContent = item.textContent;
-    filtersOption.setAttribute("aria-activedescendant", item.dataset.value)
+    filtersOption.setAttribute("aria-activedescendant", item.dataset.value);
 
     this.sortByHandler(filtersValue.textContent);
     this.closeFilters();
@@ -104,7 +104,7 @@ export default class SortByUtils {
     filtersSelected.addEventListener("click", () => {
       open = !open;
       if (open) {
-        this.openFilters()
+        this.openFilters();
         filtersSelected.setAttribute("aria-expanded", true);
       } else {
         this.closeFilters();
@@ -114,7 +114,7 @@ export default class SortByUtils {
 
     filtersItem.forEach(item => {
       item.addEventListener("click", () => {
-        this.filtersItemHandler(item, filtersValue, filtersOption, filtersSelected)
+        this.filtersItemHandler(item, filtersValue, filtersOption, filtersSelected);
         open = false;
       });
 

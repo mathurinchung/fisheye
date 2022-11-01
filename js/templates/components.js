@@ -22,19 +22,19 @@ export default class Components {
             <form id="contact-form" name="contact" action="#" method="get" novalidate>
               <div class="formData">
                 <label id="firstname" for="firstnameInput">Prénom</label>
-                <input id="firstnameInput" class="text-control" aria-labelledby="firstname" aria-required="true" name="firstname" type="text" required />
+                <input id="firstnameInput" class="text-control" name="firstname" type="text" required aria-labelledby="firstname" aria-required="true" />
               </div>
               <div class="formData">
                 <label id="lastname" for="lastnameInput">Nom</label>
-                <input id="lastnameInput" class="text-control" aria-labelledby="firstname" aria-required="true" name="lastname" type="text" required />
+                <input id="lastnameInput" class="text-control" name="lastname" type="text" required aria-labelledby="lastname" aria-required="true" />
               </div>
               <div class="formData">
                 <label id="email" for="emailInput">Email</label>
-                <input id="emailInput" class="text-control" aria-labelledby="email" aria-required="true" name="email" type="email" required />
+                <input id="emailInput" class="text-control" name="email" type="email" required aria-labelledby="email" aria-required="true" />
               </div>
               <div class="formData message">
                 <label id="message" for="messageInput">Votre message</label>
-                <textarea id="messageInput" class="text-control" aria-labelledby="message" aria-required="true" name="message" required></textarea>
+                <textarea id="messageInput" class="text-control" name="message" required aria-labelledby="message" aria-required="true"></textarea>
               </div>
 
               <button class="submit-button" aria-label="Send">Envoyer</button>

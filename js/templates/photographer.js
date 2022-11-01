@@ -18,7 +18,7 @@ export default class PhotographerTemplate {
     return `
       <article class="photographer" data-id="${this._data.id}" data-name="${this._data.name}">
         <a href="photographer.html?id=${this._data.id}">
-          <img class="portrait" src="${this._data.portrait}" alt="${this._data.name}" />
+          <img class="portrait" src="${this._data.portrait}" alt="${this._data.name}">
           <h2 class="name">${this._data.name}</h2>
         </a>
         <p class="location">${this._data.location}</p>
@@ -46,7 +46,7 @@ export default class PhotographerTemplate {
         <p class="tagline">${this._data.tagline}</p>
       </div>
       <button class="btn btn-contact open" type="button">Contactez-moi</button>
-      <img class="portrait" src=${this._data.portrait} alt="${this.name}" />
+      <img class="portrait" src=${this._data.portrait} alt="${this.name}">
     `;
   }
 

@@ -14,8 +14,8 @@ export default class CheckInputs extends FormData {
     const regex = /^[A-Za-z- ]+$/;
 
     if (name === "") throw new Error("Veuillez remplir ce champ");
-    else if (regex.test(name) === false) throw new Error(`Veuillez saisir un nom valide`);
-    else if (name.length < 2) throw new Error(`Veuillez saisir 2 caractères ou plus pour le champ du nom`);
+    else if (regex.test(name) === false) throw new Error("Veuillez saisir un nom valide");
+    else if (name.length < 2) throw new Error("Veuillez saisir 2 caractères ou plus pour le champ du nom");
   }
 
   /**
