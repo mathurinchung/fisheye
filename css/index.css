@@ -118,8 +118,8 @@ button {
 .icon-close {
   width: 42px;
   height: 42px;
-  mask: url("/assets/icons/close.svg");
-  -webkit-mask: url("/assets/icons/close.svg");
+  mask: url("assets/icons/close.svg");
+  -webkit-mask: url("assets/icons/close.svg");
 }
 
 .portrait {
