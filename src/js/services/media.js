@@ -22,7 +22,7 @@ export default class MediaService extends Api {
   static async getMediaByPhotographerId(id) {
     const allMedia = await this.getAllMedia();
     const mediaList = [];
-    allMedia.find(media => { media.photographerId == id && mediaList.push(media) });
+    allMedia.find(media => media.photographerId == id && mediaList.push(media));
 
     return mediaList;
   }

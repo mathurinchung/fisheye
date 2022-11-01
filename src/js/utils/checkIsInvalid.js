@@ -4,7 +4,7 @@ import CheckInputs from "./checkInputs.js";
  * Class that checks for invalid inputs
  * @extends CheckInputs
  */
- export default class CheckIsInvalid extends CheckInputs {
+export default class CheckIsInvalid extends CheckInputs {
   /**
    * Checks firstname is invalid
    * @param {String} id - selector to match firstname

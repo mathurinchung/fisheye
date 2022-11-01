@@ -18,11 +18,11 @@ export default class ContactFormUtils extends ModalUtils {
     const formData = [ ...document.querySelectorAll(".formData") ];
     const check = new CheckIsInvalid(formData);
 
-    check.firstname("#firstname");
-    check.lastname("#lastname");
-    check.email("#email");
-    check.message("#message");
-    return (check.firstname("#firstname") || check.lastname("#lastname") || check.email("#email") || check.message("#message")) ? true : false;
+    check.firstname("#firstnameInput");
+    check.lastname("#lastnameInput");
+    check.email("#emailInput");
+    check.message("#messageInput");
+    return (check.firstname("#firstnameInput") || check.lastname("#lastnameInput") || check.email("#emailInput") || check.message("#messageInput")) ? true : false;
   }
 
   /**
@@ -51,10 +51,10 @@ export default class ContactFormUtils extends ModalUtils {
     document.addEventListener("keydown", e => {
       const keyCode = e.key;
       switch (keyCode) {
-        case "Escape": this.closeModal();
+      case "Escape": this.closeModal();
         break;
 
-        case "Enter": this.contactFormHandler.bind(this);
+      case "Enter": this.contactFormHandler.bind(this);
         break;
       }
     });

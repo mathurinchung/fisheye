@@ -1,7 +1,7 @@
 /**
  * 
  */
- export default class Api {
+export default class Api {
   /**
    * Api URL
    */

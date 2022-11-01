@@ -1,4 +1,4 @@
-import MediaModel from "../models/media.js"
+import MediaModel from "../models/media.js";
 
 /**
  * 

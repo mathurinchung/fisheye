@@ -1,4 +1,4 @@
-import MediaModel from "../models/media.js"
+import MediaModel from "../models/media.js";
 
 /**
  * 
@@ -17,7 +17,7 @@ export default class ImageModel extends MediaModel {
   get media() {
     return `
       <figure class="media">
-        <img src="${this.path + this._image}" alt="${this.title}" />
+        <img src="${this.path + this._image}" alt="${this.title}">
       </figure>
     `;
   }

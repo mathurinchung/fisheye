@@ -1,7 +1,7 @@
 /**
  * 
  */
- export default class MediaModel {
+export default class MediaModel {
   /**
    * 
    * @param {*} data 
@@ -13,7 +13,7 @@
     this._likes = data.likes;
     this._date = data.date;
     this._price = data.price;
-    this._path = `assets/media/`;
+    this._path = "assets/media/";
   }
 
   //

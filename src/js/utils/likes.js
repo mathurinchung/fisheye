@@ -26,7 +26,7 @@ export default class LikesUtils {
       currentLike.dataset.userLike = true;
       currentLike.dataset.likes = likesText + 1;
       captionLikeText.innerHTML = `${likesText + 1}`;
-      captionLikeIcon.innerHTML = `<i class="fa fa-heart"></i>`;
+      captionLikeIcon.innerHTML = "<i class='fa fa-heart'></i>";
 
       this._likes++;
       this.insertLikes.innerHTML = this.insertHTML(this._likes);
@@ -34,7 +34,7 @@ export default class LikesUtils {
       currentLike.dataset.userLike = false;
       currentLike.dataset.likes = likesText - 1;
       captionLikeText.innerHTML = `${likesText - 1}`;
-      captionLikeIcon.innerHTML = `<i class="far fa-heart"></i>`;
+      captionLikeIcon.innerHTML = "<i class='far fa-heart'></i>";
 
       this._likes--;
       this.insertLikes.innerHTML = this.insertHTML(this._likes);
