@@ -5,7 +5,7 @@
   /**
    * Api URL
    */
-  static _url = "data/photographers.json";
+  static _url = "/data/photographers.json";
 
   /**
    * 
