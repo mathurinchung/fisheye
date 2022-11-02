@@ -76,15 +76,15 @@ export default class Components {
     return `
       <div id="lightbox" class="modal-bg">
         <div class="modal" aria-label="image closeup view">
-          <button class="lightbox-close close" type="button">
-            <span class="icon-close" aria-hidden="true"></span>
-          </button>
           <button class="previous" type="button"><i class="fa fa-chevron-left"></i></button>
           <div class="lightbox-container">
             <div class="lightbox-media"></div>
             <p class="lightbox-caption"></p>
           </div>
           <button class="next" type="button"><i class="fa fa-chevron-right"></i></button>
+          <button class="lightbox-close close" type="button">
+            <span class="icon-close" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     `;
