@@ -1,11 +1,4 @@
-/**
- * 
- */
 export default class ModalUtils {
-  /**
-   * 
-   * @param {*} modal 
-   */
   constructor(modal) {
     this._modal = document.querySelector(modal);
     this._header = document.querySelector("#header");
@@ -15,9 +8,6 @@ export default class ModalUtils {
     closeButton.forEach(btn => btn.addEventListener("click", () => this.closeModal()));
   }
 
-  /**
-   * 
-   */
   openModal() {
     document.body.style.overflow = "hidden";
     this._modal.style.display = "block";
@@ -26,9 +16,6 @@ export default class ModalUtils {
     this._main.setAttribute("aria-hidden", true);
   }
 
-  /**
-   * 
-   */
   closeModal() {
     document.body.style.overflow = "auto";
     this._modal.style.display = "none";

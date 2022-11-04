@@ -1,14 +1,7 @@
 import PhotographerFactory from "../factories/photographer.js";
 import PhotographerService from "../services/photographer.js";
 
-/**
- * 
- */
 class App {
-  /**
-   * 
-   * @param {*} photographers 
-   */
   displayData(photographers) {
     const photographersSection = document.querySelector(".photographer-section");
 
@@ -18,9 +11,6 @@ class App {
     });
   }
 
-  /**
-   * 
-   */
   async init() {
     const photographers = await PhotographerService.getPhotographers();
 

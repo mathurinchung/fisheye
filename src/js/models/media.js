@@ -1,11 +1,4 @@
-/**
- * 
- */
 export default class MediaModel {
-  /**
-   * 
-   * @param {*} data 
-   */
   constructor(data) {
     this._id = data.id;
     this._photographerId = data.photographerId;
@@ -16,22 +9,16 @@ export default class MediaModel {
     this._path = "assets/media/";
   }
 
-  //
   get id() { return this._id; }
 
-  //
   get photographerId() { return this._photographerId; }
 
-  //
   get title() { return this._title; }
 
-  //
   get likes() { return this._likes; }
 
-  //
   get date() { return this._date; }
 
-  //
   get price() { return this._price; }
 
   get path() { return this._path; }

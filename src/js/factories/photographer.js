@@ -5,11 +5,6 @@ import PhotographerTemplate from "../templates/photographer.js";
  * 
  */
 export default class PhotographerFactory {
-  /**
-   * 
-   * @param {*} data 
-   * @returns 
-   */
   constructor(data) {
     this._data = new PhotographerModel(data);
 

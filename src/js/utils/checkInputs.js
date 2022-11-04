@@ -1,14 +1,6 @@
 import FormData from "./formData.js";
 
-/**
- * Class that checks the value of inputs
- * @extends FormData
- */
 export default class CheckInputs extends FormData {
-  /**
-   * Checks the value of the input name
-   * @param {String} formdata
-   */
   checkName(formdata) {
     const name = formdata.querySelector("input").value;
     const regex = /^[A-Za-z- ]+$/;
@@ -18,10 +10,6 @@ export default class CheckInputs extends FormData {
     else if (name.length < 2) throw new Error("Veuillez saisir 2 caractères ou plus pour le champ du nom");
   }
 
-  /**
-   * Checks the value of the input email
-   * @param {String} formdata 
-   */
   checkEmail(formdata) {
     const email = formdata.querySelector("input").value;
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -30,10 +18,6 @@ export default class CheckInputs extends FormData {
     else if (regex.test(email.trim()) === false) throw new Error("Veuillez entrer un email valide");
   }
 
-  /**
-   * Checks the value of the textarea message
-   * @param {String} formdata 
-   */
   checkMessage(formdata) {
     const message = formdata.querySelector("textarea").value;
 

@@ -5,15 +5,7 @@ import MediaService from "../services/media.js";
 import Components from "../templates/components.js";
 import Utils from "../utils/index.js";
 
-/**
- * 
- */
 class App {
-  /**
-   * 
-   * @param {*} photographer 
-   * @param {*} mediaList 
-   */
   displayData(photographer, mediaList) {
     const photographerMain = document.querySelector("#main");
     const photographerBanner = document.querySelector(".photographer-banner");
@@ -35,9 +27,6 @@ class App {
     photographerMain.insertAdjacentHTML("afterend", Components.LightBoxDOM());
   }
 
-  /**
-   * 
-   */
   async init() {
     const URLSearchParams = new URL(window.location.href).searchParams;
     const id = URLSearchParams.get("id");

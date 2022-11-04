@@ -1,6 +1,3 @@
-/**
- * 
- */
 export default class LikesUtils {
   constructor() {
     this.insertLikes = document.querySelector(".insert-likes");
@@ -11,10 +8,6 @@ export default class LikesUtils {
     return `${likes} <i class="fa fa-heart"></i>`;
   }
 
-  /**
-   * 
-   * @param {*} e 
-   */
   likeHandler(e) {
     const currentLike = e.target.closest("[data-user-like]");
     const captionLikeText = currentLike.querySelector(".caption .like-text");
@@ -41,9 +34,6 @@ export default class LikesUtils {
     }
   }
 
-  /**
-   * 
-   */
   init() {
     const insertBlock = document.querySelector(".insert");
     const likeText = [ ...document.querySelectorAll(".like-text") ];

@@ -1,12 +1,4 @@
-/**
- * 
- */
 export default class Components {
-  /**
-   * 
-   * @param {*} name 
-   * @returns 
-   */
   static ContactFormDOM(name) {
     return `
       <div id="contact" class="modal-bg">
@@ -45,10 +37,6 @@ export default class Components {
     `;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   static SortByDropdownDOM() {
     return `
       <div class="filters">
@@ -68,10 +56,6 @@ export default class Components {
     `;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   static LightBoxDOM() {
     return `
       <div id="lightbox" class="modal-bg">
