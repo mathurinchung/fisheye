@@ -1,19 +1,12 @@
 import ModalUtils from "./modal.js";
 import CheckIsInvalid from "./checkIsInvalid.js";
 
-/**
- * 
- */
 export default class ContactFormUtils extends ModalUtils {
   constructor(modal) {
     super(modal);
     this.form = document.querySelector("#contact-form");
   }
 
-  /**
-   * 
-   * @returns 
-   */
   #isInvalid() {
     const formData = [ ...document.querySelectorAll(".formData") ];
     const check = new CheckIsInvalid(formData);
@@ -25,11 +18,6 @@ export default class ContactFormUtils extends ModalUtils {
     return (check.firstname("#firstnameInput") || check.lastname("#lastnameInput") || check.email("#emailInput") || check.message("#messageInput")) ? true : false;
   }
 
-  /**
-   * 
-   * @param {*} e
-   * @returns 
-   */
   contactFormHandler(e) {
     const formData = new FormData(this.form);
     const result = Object.fromEntries(formData.entries());
@@ -44,9 +32,6 @@ export default class ContactFormUtils extends ModalUtils {
     this.form.reset();
   }
 
-  /**
-   * 
-   */
   controlsHandler() {
     document.addEventListener("keydown", e => {
       const keyCode = e.key;
@@ -60,9 +45,6 @@ export default class ContactFormUtils extends ModalUtils {
     });
   }
 
-  /**
-   * 
-   */
   init() {
     const openButton = document.querySelector(".btn-contact.open");
 

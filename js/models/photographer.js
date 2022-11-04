@@ -1,11 +1,4 @@
-/**
- * 
- */
 export default class PhotographerModel {
-  /**
-   * 
-   * @param {*} data 
-   */
   constructor(data) {
     this._name = data.name;
     this._id = data.id;
@@ -16,21 +9,15 @@ export default class PhotographerModel {
     this._portrait = data.portrait;
   }
 
-  //
   get name() { return this._name; }
 
-  //
   get id() { return this._id; }
 
-  //
   get location() { return `${this._city}, ${this._country}`; }
 
-  //
   get tagline() { return this._tagline; }
 
-  //
   get price() { return this._price; }
 
-  //
   get portrait() { return `assets/photographers/${this._portrait}`; }
 }

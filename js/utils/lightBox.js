@@ -1,13 +1,6 @@
 import ModalUtils from "./modal.js";
 
-/**
- * 
- */
 export default class LightBoxUtils extends ModalUtils {
-  /**
-   * 
-   * @param {*} modal 
-   */
   constructor(modal, gallery) {
     super(modal);
     this._gallery = gallery;
@@ -15,9 +8,6 @@ export default class LightBoxUtils extends ModalUtils {
     this._currentItem = "";
   }
 
-  /**
-   * 
-   */
   prev() {
     if (this._currentIndex < 1) {
       this._currentIndex = this._gallery.length - 1;
@@ -30,9 +20,6 @@ export default class LightBoxUtils extends ModalUtils {
     this.displayMedia();
   }
 
-  /**
-   * 
-   */
   next() {
     if (this._currentIndex >= this._gallery.length - 1) {
       this._currentIndex = 0;
@@ -45,9 +32,6 @@ export default class LightBoxUtils extends ModalUtils {
     this.displayMedia();
   }
 
-  /**
-   * 
-   */
   displayMedia() {
     const mediaLightbox = document.querySelector(".lightbox-media");
     const captionLightbox = document.querySelector(".lightbox-caption");
@@ -62,10 +46,6 @@ export default class LightBoxUtils extends ModalUtils {
     }
   }
 
-  /**
-   * 
-   * @param {*} e 
-   */
   lightboxHandler(e) {
     this._currentItem = e.target.closest("[data-id]");
     this._currentIndex = this._gallery.indexOf(this._currentItem);
@@ -75,9 +55,6 @@ export default class LightBoxUtils extends ModalUtils {
     this.openModal();
   }
 
-  /**
-   * 
-   */
   controlsHandler() {
     document.addEventListener("keydown", e => {
       const keyCode = e.key;
@@ -100,9 +77,6 @@ export default class LightBoxUtils extends ModalUtils {
     });
   }
 
-  /**
-   * 
-   */
   init() {
     const openButton = document.querySelectorAll(".lnk-media.open");
     const prevButton = document.querySelector(".previous");

@@ -1,16 +1,6 @@
-/**
- * 
- */
 export default class Api {
-  /**
-   * Api URL
-   */
-  static _url = "data/photographers.json";
+  static _url = "data/photographers.json"; // API baseURL
 
-  /**
-   * 
-   * @returns 
-   */
   static async response() {
     try {
       const response = await fetch(this._url);
@@ -23,9 +13,5 @@ export default class Api {
     }
   }
 
-  /**
-   * 
-   * @returns 
-   */
-  static get() { return this.response(); }
+  static get() { return this.response(); } // GET Method
 }

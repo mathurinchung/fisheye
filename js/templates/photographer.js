@@ -1,19 +1,8 @@
-/**
- * 
- */
 export default class PhotographerTemplate {
-  /**
-   * 
-   * @param {*} data 
-   */
   constructor(data) {
     this._data = data;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   UserCardDOM() {
     return `
       <article class="photographer" data-id="${this._data.id}" data-name="${this._data.name}">
@@ -28,16 +17,8 @@ export default class PhotographerTemplate {
     `;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   UserTitleDOM() { return `Fisheye - ${this._data.name}`; }
 
-  /**
-   * 
-   * @returns 
-   */
   UserBannerDOM() {
     return `
       <div class="info">
@@ -50,10 +31,6 @@ export default class PhotographerTemplate {
     `;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   UserInsertDOM() {
     return `
       <div class="insert">

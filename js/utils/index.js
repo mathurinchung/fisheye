@@ -4,9 +4,6 @@ import SortByUtils from "./sortBy.js";
 import LightBoxUtils from "./lightBox.js";
 import LikesUtils from "./likes.js";
 
-/**
- * 
- */
 export default class Utils {
   static handler() {
     const gallery = [ ...document.querySelectorAll("[data-id]") ];

@@ -1,19 +1,8 @@
-/**
- * 
- */
 export default class MediaTemplate {
-  /**
-   * 
-   * @param {*} data 
-   */
   constructor(data) {
     this._data = data;
   }
 
-  /**
-   * 
-   * @returns 
-   */
   MediaCardDOM() {
     return `
       <article data-id="${this._data.id}" data-user-like="false" data-likes="${this._data.likes}" data-date="${this._data.date}" data-title="${this._data.title}">
