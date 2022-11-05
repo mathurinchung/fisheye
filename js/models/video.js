@@ -11,7 +11,8 @@ export default class VideoModel extends MediaModel {
 
     return `
       <video class="media" tabindex="-1">
-        <source src="${this.path + this._video}" type="video/${extension}" />
+        <source src="${this.path + this._video}" type="video/${extension}">
+        <track src="captions/vtt/captions_fr.vtt" kind="captions" srclang="fr" label="french_captions" default="true">
       </video>
     `;
   }

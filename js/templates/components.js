@@ -47,9 +47,9 @@ export default class Components {
             <span class="filters-button"><i class="fa fa-chevron-down"></i></span>
           </button>
           <ul class="filters-option" aria-labelledby="sortBy" aria-activedescendant="popularity" aria-selected="true" role="listbox">
-            <li class="filters-item" data-value="popularity" role="button" tabindex="0">Popularité</li>
-            <li class="filters-item" data-value="date" role="button" tabindex="0">Date</li>
-            <li class="filters-item"  data-value="title" role="button" tabindex="0">Titre</li>
+            <li class="filters-item" data-value="popularity" tabindex="0">Popularité</li>
+            <li class="filters-item" data-value="date" tabindex="0">Date</li>
+            <li class="filters-item"  data-value="title" tabindex="0">Titre</li>
           </ul>
         </div>
       </div>
@@ -60,13 +60,13 @@ export default class Components {
     return `
       <div id="lightbox" class="modal-bg">
         <div class="modal" aria-label="image closeup view">
-          <button class="previous" type="button"><i class="fa fa-chevron-left"></i></button>
+          <button class="previous" type="button" aria-label="Preivous image"><i class="fa fa-chevron-left"></i></button>
           <div class="lightbox-container">
             <div class="lightbox-media"></div>
             <p class="lightbox-caption"></p>
           </div>
-          <button class="next" type="button"><i class="fa fa-chevron-right"></i></button>
-          <button class="lightbox-close close" type="button">
+          <button class="next" type="button" aria-label="Next image"><i class="fa fa-chevron-right"></i></button>
+          <button class="lightbox-close close" type="button" aria-label="Close dialog">
             <span class="icon-close" aria-hidden="true"></span>
           </button>
         </div>
