@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,13 @@
   </head>
 
   <body>
-    <header id="header">
+    <header id="header" aria-hidden="false">
       <a href="index.html" aria-label="Fisheye Home page"><img class="logo" src="assets/images/logo.png" alt="Fisheye Home page"></a>
     </header>
 
-    <main id="main">
+    <main id="main" aria-hidden="false">
       <div class="photographer-banner"></div>
-      <div class="photographer-gallery"></div>
+      <div class="photographer-gallery" tabindex="-1"></div>
     </main>
 
     <script type="module" src="js/pages/photographer.js"></script>
