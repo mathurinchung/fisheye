@@ -32,6 +32,17 @@ export default class LightBoxUtils extends ModalUtils {
     this.displayMedia();
   }
 
+  lightboxHandler(e) {
+    this._currentItem = e.target.closest("[data-id]");
+    this._currentIndex = this._gallery.indexOf(this._currentItem);
+    console.log(this._currentItem);
+    console.log(this._gallery);
+    
+    this.displayMedia();
+    
+    this.openModal(".lightbox-media");
+  }
+
   displayMedia() {
     const mediaLightbox = document.querySelector(".lightbox-media");
     const captionLightbox = document.querySelector(".lightbox-caption");
@@ -47,29 +58,19 @@ export default class LightBoxUtils extends ModalUtils {
     }
   }
 
-  lightboxHandler(e) {
-    this._currentItem = e.target.closest("[data-id]");
-    this._currentIndex = this._gallery.indexOf(this._currentItem);
+  controlsHandler(e) {
+    const keyCode = e.key;
 
-    this.displayMedia();
+    switch (keyCode) {
+    case "ArrowRight": this.next();
+      break;
 
-    this.openModal();
-  }
+    case "ArrowLeft": this.prev();
+      break;
 
-  controlsHandler() {
-    document.addEventListener("keydown", e => {
-      const keyCode = e.key;
-      switch (keyCode) {
-      case "ArrowRight": this.next();
-        break;
-
-      case "ArrowLeft": this.prev();
-        break;
-
-      case "Escape": this.closeModal();
-        break;
-      }
-    });
+    case "Escape": this.closeModal(".photographer-gallery", e => this.controlsHandler(e));
+      break;
+    }
   }
 
   controlVideo(video) {
@@ -80,13 +81,16 @@ export default class LightBoxUtils extends ModalUtils {
 
   init() {
     const openButton = document.querySelectorAll(".lnk-media.open");
+    const closeButton = document.querySelector("#lightbox .close");
     const prevButton = document.querySelector(".previous");
     const nextButton = document.querySelector(".next");
-    
+    const lightboxHandlerBind = this.lightboxHandler.bind(this);
+  
     prevButton.addEventListener("click", () => this.prev());
     nextButton.addEventListener("click", () => this.next());
-    openButton.forEach(btn => btn.addEventListener("click", this.lightboxHandler.bind(this)));
+    openButton.forEach(btn => btn.addEventListener("click", lightboxHandlerBind));
+    document.addEventListener("keydown", e => this.controlsHandler(e));
 
-    this.controlsHandler();
+    closeButton.addEventListener("click", () => this.closeModal(".photographer-gallery", e => this.controlsHandler(e)));
   }
 }
