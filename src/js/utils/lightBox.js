@@ -38,6 +38,7 @@ export default class LightBoxUtils extends ModalUtils {
 
     mediaLightbox.innerHTML = this._currentItem.querySelector(".media").outerHTML;
     captionLightbox.textContent = this._currentItem.querySelector(".caption .title").textContent;
+    captionLightbox.setAttribute("aria-label", this._currentItem.querySelector(".caption .title").textContent);
 
     if (mediaLightbox.querySelector(".media").tagName === "VIDEO") {
       mediaLightbox.querySelector(".media").setAttribute("controls", "");
