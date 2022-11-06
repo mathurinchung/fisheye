@@ -51,6 +51,7 @@ export default class LikesUtils {
     insertBlock.addEventListener("click", () => {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
+      document.querySelector(".btn-contact").focus();
     });
 
     this.insertLikes.innerHTML = this.insertHTML(this._likes);

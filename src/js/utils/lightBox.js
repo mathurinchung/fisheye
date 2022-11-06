@@ -8,6 +8,30 @@ export default class LightBoxUtils extends ModalUtils {
     this._currentItem = "";
   }
 
+  displayMedia() {
+    const mediaLightbox = document.querySelector(".lightbox-media");
+    const captionLightbox = document.querySelector(".lightbox-caption");
+
+    mediaLightbox.innerHTML = this._currentItem.querySelector(".media").outerHTML;
+    captionLightbox.textContent = this._currentItem.querySelector(".caption .title").textContent;
+    captionLightbox.setAttribute("aria-label", this._currentItem.querySelector(".caption .title").textContent);
+
+    if (mediaLightbox.querySelector(".media").tagName === "VIDEO") {
+      mediaLightbox.querySelector(".media").setAttribute("controls", "");
+
+      this.controlVideo(mediaLightbox.querySelector(".media"));
+    }
+  }
+
+  lightboxHandler(e) {
+    this._currentItem = e.target.closest("[data-id]");
+    this._currentIndex = this._gallery.indexOf(this._currentItem);
+    console.log(this._currentItem);
+    
+    this.displayMedia();
+    this.openModal(".lightbox-media");
+  }
+
   prev() {
     if (this._currentIndex < 1) {
       this._currentIndex = this._gallery.length - 1;
@@ -32,51 +56,23 @@ export default class LightBoxUtils extends ModalUtils {
     this.displayMedia();
   }
 
-  lightboxHandler(e) {
-    this._currentItem = e.target.closest("[data-id]");
-    this._currentIndex = this._gallery.indexOf(this._currentItem);
-    console.log(this._currentItem);
-    console.log(this._gallery);
-    
-    this.displayMedia();
-    
-    this.openModal(".lightbox-media");
-  }
-
-  displayMedia() {
-    const mediaLightbox = document.querySelector(".lightbox-media");
-    const captionLightbox = document.querySelector(".lightbox-caption");
-
-    mediaLightbox.innerHTML = this._currentItem.querySelector(".media").outerHTML;
-    captionLightbox.textContent = this._currentItem.querySelector(".caption .title").textContent;
-    captionLightbox.setAttribute("aria-label", this._currentItem.querySelector(".caption .title").textContent);
-
-    if (mediaLightbox.querySelector(".media").tagName === "VIDEO") {
-      mediaLightbox.querySelector(".media").setAttribute("controls", "");
-
-      this.controlVideo(mediaLightbox.querySelector(".media"));
-    }
-  }
-
   controlsHandler(e) {
     const keyCode = e.key;
 
     switch (keyCode) {
+    case "Escape": this.closeModal(".photographer-gallery", e => this.controlsHandler(e));
+      break;
+
     case "ArrowRight": this.next();
       break;
 
     case "ArrowLeft": this.prev();
       break;
-
-    case "Escape": this.closeModal(".photographer-gallery", e => this.controlsHandler(e));
-      break;
     }
   }
 
   controlVideo(video) {
-    document.addEventListener("keydown", e => {
-      if (e.key === " ") video.paused ? video.play() : video.pause();
-    });
+    document.addEventListener("keydown", e => (e.key === " ") && video.paused ? video.play() : video.pause());
   }
 
   init() {
@@ -84,13 +80,12 @@ export default class LightBoxUtils extends ModalUtils {
     const closeButton = document.querySelector("#lightbox .close");
     const prevButton = document.querySelector(".previous");
     const nextButton = document.querySelector(".next");
-    const lightboxHandlerBind = this.lightboxHandler.bind(this);
-  
+    const lightboxHandler = this.lightboxHandler.bind(this);
+
+    openButton.forEach(el => el.addEventListener("click", lightboxHandler));
+    closeButton.addEventListener("click", () => this.closeModal(".photographer-gallery", e => this.controlsHandler(e)));
+    document.addEventListener("keydown", e => this.controlsHandler(e));
     prevButton.addEventListener("click", () => this.prev());
     nextButton.addEventListener("click", () => this.next());
-    openButton.forEach(btn => btn.addEventListener("click", lightboxHandlerBind));
-    document.addEventListener("keydown", e => this.controlsHandler(e));
-
-    closeButton.addEventListener("click", () => this.closeModal(".photographer-gallery", e => this.controlsHandler(e)));
   }
 }
