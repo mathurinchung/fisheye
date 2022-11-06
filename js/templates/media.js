@@ -12,7 +12,7 @@ export default class MediaTemplate {
         <p class="caption">
           <span class="title">${this._data.title}</span>
           <span class="like-text">${this._data.likes}</span>
-          <span class="like-icon" aria-label="likes" tabindex="0"><i class="far fa-heart"></i></span>
+          <span class="like-icon" aria-label="like" role="button" tabindex="0"><i class="far fa-heart"></i></span>
         </p>
       </article>
     `;
