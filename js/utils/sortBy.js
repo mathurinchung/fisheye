@@ -46,6 +46,7 @@ export default class SortByUtils {
   closeFilters() {
     this._icon.className = "filters-button";
     this._option.style.display = "none";
+    document.querySelector(".photographer-gallery").focus();
   }
 
   filtersItemHandler(item, filtersValue, filtersOption, filtersSelected) {

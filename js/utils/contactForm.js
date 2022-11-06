@@ -47,11 +47,10 @@ export default class ContactFormUtils extends ModalUtils {
   init() {
     const openButton = document.querySelector(".btn-contact.open");
     const closeButton = document.querySelector("#contact .close");
+    const contactFormHandlerBind = this.contactFormHandler.bind(this);
 
-    this.form.addEventListener("submit", this.contactFormHandler.bind(this));
-
+    this.form.addEventListener("submit", contactFormHandlerBind);
     openButton.addEventListener("click", () => this.openModal("#firstname", e => this.controlsHandler(e)));
-
     closeButton.addEventListener("click", () => this.closeModal(".btn-contact", e => this.controlsHandler(e)));
   }
 }

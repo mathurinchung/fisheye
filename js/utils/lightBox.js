@@ -26,7 +26,6 @@ export default class LightBoxUtils extends ModalUtils {
   lightboxHandler(e) {
     this._currentItem = e.target.closest("[data-id]");
     this._currentIndex = this._gallery.indexOf(this._currentItem);
-    console.log(this._currentItem);
     
     this.displayMedia();
     this.openModal(".lightbox-media");
