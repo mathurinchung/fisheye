@@ -107,14 +107,14 @@ i {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  column-gap: 207px;
-  row-gap: 70px;
-  padding: 53px 45px 20px;
+  column-gap: 14.375vw;
+  row-gap: 4.8611111111vw;
+  padding: 3.6805555556vw 3.125vw 1.3888888889vw;
 }
 
 .photographer-card {
-  padding-top: 10px;
-  width: 310px;
+  padding-top: 0.6944444444vw;
+  width: 21.5277777778vw;
   height: auto;
 }
 
@@ -133,45 +133,45 @@ i {
 
 .photographer-card img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 13.8888888889vw;
+  height: 13.8888888889vw;
   background-color: #C4C4C4;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.2777777778vw 0.8333333333vw rgba(0, 0, 0, 0.25);
 }
 
 .photographer-card figcaption {
-  margin-top: 20px;
+  margin-top: 1.3888888889vw;
   text-align: center;
 }
 
 .photographer-card h3 {
   color: #D3573C;
-  font-size: 36px;
+  font-size: 2.5vw;
   font-weight: 400;
-  line-height: 46.87px;
+  line-height: 3.2548611111vw;
 }
 
 .photographer-card h4 {
-  margin-top: 8px;
+  margin-top: 0.5555555556vw;
   color: #901C1C;
-  font-size: 13px;
+  font-size: 0.9027777778vw;
   font-weight: 400;
-  line-height: 16.93px;
+  line-height: 1.1756944444vw;
 }
 
 .photographer-card .tagline {
-  margin-top: 3px;
-  font-size: 10px;
+  margin-top: 0.2083333333vw;
+  font-size: 0.6944444444vw;
   font-weight: 400;
-  line-height: 13.02px;
+  line-height: 0.9041666667vw;
 }
 
 .photographer-card .price {
-  margin-top: 3px;
+  margin-top: 0.2083333333vw;
   color: #757575;
-  font-size: 9px;
+  font-size: 0.625vw;
   font-weight: 400;
-  line-height: 11.72px;
+  line-height: 0.8138888889vw;
 }
 
 #Header a {
