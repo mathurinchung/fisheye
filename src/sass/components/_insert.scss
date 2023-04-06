@@ -1,0 +1,26 @@
+.insert {
+  position: fixed;
+  right: get-vw($desktop, 36px);
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: get-vw($desktop, 5px);
+  border-top-right-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 21px) get-vw($desktop, 34px) get-vw($desktop, 16px) get-vw($desktop, 31px);
+  width: get-vw($desktop, 376px);
+  background-color: #DB8876;
+  font-size: get-vw($desktop, 24px);
+  font-weight: 500;
+  line-height: get-vw($desktop, 31.25px);
+}
+
+.insert-likes {
+  display: flex;
+  align-items: center;
+  column-gap: get-vw($desktop, 6.38px);
+}
+
+.insert-likes .icon-heart {
+  background-color: #000;
+}

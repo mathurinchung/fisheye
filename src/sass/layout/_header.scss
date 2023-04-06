@@ -1,0 +1,13 @@
+#Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 get-vw($desktop, 100px) get-vw($desktop, 40px);
+  color: $base-color;
+}
+
+#Header h2 {
+  padding: get-vw($desktop, 44px) 0 0;
+  font-weight: 400;
+  font-size: get-vw($desktop, 36px);
+  line-height: get-vw($desktop, 46.87px);
+}

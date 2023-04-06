@@ -1,0 +1,76 @@
+.sortby {
+  position: absolute;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: get-vw($desktop, 74px) get-vw($desktop, 170px);
+  column-gap: get-vw($desktop, 25px);
+  padding-left: get-vw($desktop, 97px);
+}
+
+.sortby h3 {
+  margin-top: get-vw($desktop, 20px);
+  width: content;
+  font-size: get-vw($desktop, 18px);
+  font-weight: 700;
+  line-height: get-vw($desktop, 23.44px);
+}
+
+.sortby-button {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: get-vw($desktop, 9px);
+  border: none;
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 23px) get-vw($desktop, 20px);
+  width: get-vw($desktop, 170px);
+  height: get-vw($desktop, 69.44px);
+  background-color: $base-color;
+  color: #FFF;
+  font-size: get-vw($desktop, 18px);
+  font-weight: 700;
+  line-height: get-vw($desktop, 23.44px);
+  cursor:pointer;
+}
+
+.sortby-button .icon-dropdown {
+  position: relative;
+  z-index: 10;
+  transform:rotate(0deg);
+  transition: transform .3s linear;
+}
+
+.sortby-button.open .icon-dropdown {
+  transform:rotate(180deg);
+}
+
+.sortby-list {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: none;
+  margin-top: get-vw($desktop, 9px);
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 9px) get-vw($desktop, 10px) get-vw($desktop, 6px);
+  width: get-vw($desktop, 170px);
+  background-color: $base-color;
+  color: #FFF;
+  font-size: get-vw($desktop, 18px);
+  font-weight: 700;
+  line-height: get-vw($desktop, 23.44px);
+}
+
+.sortby-list.open {
+  display: block;
+}
+
+.sortby-item {
+  padding: get-vw($desktop, 14px) get-vw($desktop, 10px);
+  cursor:pointer;
+}
+
+.sortby-item:nth-child(2) {
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #FFF;
+}

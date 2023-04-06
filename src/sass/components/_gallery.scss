@@ -1,0 +1,49 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: get-vw($desktop, 95px);
+  row-gap: get-vw($desktop, 20px);
+  padding: get-vw($desktop, 101px) get-vw($desktop, 100px) get-vw($desktop, 50px);
+}
+
+.gallery li {
+  width: get-vw($desktop, 350px);
+  height: get-vw($desktop, 351px);
+}
+
+.gallery figure {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery img, .gallery video {
+  border-radius: get-vw($desktop, 5px);
+  width: get-vw($desktop, 350px);
+  height: get-vw($desktop, 300px);
+  background-color: #C4C4C4;
+  cursor: pointer;
+}
+
+.gallery figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding-top: get-vw($desktop, 5px);
+  color: $base-color;
+  font-size: get-vw($desktop, 24px);
+  line-height: get-vw($desktop, 31.25px);
+}
+
+.gallery figcaption .title {
+  overflow: hidden;
+  width: get-vw($desktop, 290px);
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+
+.gallery figcaption .like-number {
+  font-weight: 500;
+}
+
+.gallery figcaption .like-icon {
+  cursor: pointer;
+}

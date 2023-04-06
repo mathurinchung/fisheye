@@ -1,0 +1,24 @@
+.modal {
+  position: relative;
+  z-index: 15;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+.modal.active {
+  display: flex;
+  justify-content: center;
+
+  @if selector-exists('#lightbox') {
+    align-items: flex-end;
+  }
+  
+  @if selector-exists('#contactform')  {
+    align-items: center;
+  }
+}

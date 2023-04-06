@@ -1,0 +1,53 @@
+.photographer-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 get-vw($desktop, 100px);
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 56.5px) get-vw($desktop, 50px);
+  width: get-vw($desktop, 1240px);
+  height: get-vw($desktop, 313px);
+  background-color: #FAFAFA;
+}
+
+.photographer-banner h2 {
+  color: #D3573C;
+  font-size: get-vw($desktop, 64px);
+  font-weight: 400;
+  line-height: get-vw($desktop, 83.33px);
+}
+
+.photographer-banner .location {
+  color: #901C1C;
+  font-size: get-vw($desktop, 24px);
+  font-weight: 400;
+  line-height: get-vw($desktop, 31.25px);
+}
+
+.photographer-banner .tagline {
+  margin-top: get-vw($desktop, 19px);
+  color: #525252;
+  font-size: get-vw($desktop, 18px);
+  font-weight: 400;
+  line-height: get-vw($desktop, 23.44px);
+}
+
+.photographer-banner button {
+  border: none;
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 21.5px) get-vw($desktop, 11px);
+  background-color: #901C1C;
+  color: #FFF;
+  font-size: get-vw($desktop, 20px);
+  font-weight: 700;
+  line-height: get-vw($desktop, 26.04px);
+  cursor: pointer;
+}
+
+.photographer-banner img {
+  border-radius: 50%;
+  width: get-vw($desktop, 200px);
+  height: get-vw($desktop, 200px);
+  background-color: #C4C4C4;
+  box-shadow: 0 get-vw($desktop, 4px) get-vw($desktop, 12px) rgba(0, 0, 0, 0.25);
+}

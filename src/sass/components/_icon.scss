@@ -1,0 +1,63 @@
+i {
+  display: inline-block;
+}
+
+.icon-logo {
+  width: get-vw($desktop, 200px);
+  height: get-vw($desktop, 50px);
+  mask:url("../assets/svg/logo.svg") no-repeat;
+  mask-size: get-vw($desktop, 200px) get-vw($desktop, 50px);
+  -webkit-mask:url("../assets/svg/logo.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 200px) get-vw($desktop, 50px);
+  background-color: $base-color;
+}
+
+.icon-dropdown {
+  width: get-vw($desktop, 16px);
+  height: get-vw($desktop, 9.88px);
+  mask:url("../assets/svg/arrow-dropdown.svg") no-repeat;
+  mask-size: get-vw($desktop, 16px) get-vw($desktop, 9.88px);
+  -webkit-mask:url("../assets/svg/arrow-dropdown.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 16px) get-vw($desktop, 9.88px);
+  background-color: #FFF;
+}
+
+.icon-heart {
+  width: get-vw($desktop, 17.5px);
+  height: get-vw($desktop, 18.35px);
+  mask:url("../assets/svg/heart.svg") no-repeat;
+  mask-size: get-vw($desktop, 17.5px) get-vw($desktop, 18.35px);
+  -webkit-mask:url("../assets/svg/heart.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 17.5px) get-vw($desktop, 18.35px);
+  background-color: $base-color;
+}
+
+.icon-arrow-left {
+  width: get-vw($desktop, 29.64px);
+  height: get-vw($desktop, 48px);
+  mask:url("../assets/svg/arrow-left.svg") no-repeat;
+  mask-size: get-vw($desktop, 29.64px) get-vw($desktop, 48px);
+  -webkit-mask:url("../assets/svg/arrow-left.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 29.64px) get-vw($desktop, 48px);
+  background-color: $base-color;
+}
+
+.icon-arrow-right {
+  width: get-vw($desktop, 29.64px);
+  height: get-vw($desktop, 48px);
+  mask:url("../assets/svg/arrow-right.svg") no-repeat;
+  mask-size: get-vw($desktop, 29.64px) get-vw($desktop, 48px);
+  -webkit-mask:url("../assets/svg/arrow-right.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 29.64px) get-vw($desktop, 48px);
+  background-color: $base-color;
+}
+
+.icon-close {
+  width: get-vw($desktop, 42px);
+  height: get-vw($desktop, 42px);
+  mask:url("../assets/svg/close.svg") no-repeat;
+  mask-size: get-vw($desktop, 42px) get-vw($desktop, 42px);
+  -webkit-mask:url("../assets/svg/close.svg") no-repeat;
+  -webkit-mask-size: get-vw($desktop, 42px) get-vw($desktop, 42px);
+  background-color: $base-color;
+}

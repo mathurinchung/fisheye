@@ -1,0 +1,84 @@
+#contactform {
+  display: flex;
+  flex-direction: column;
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 15px) get-vw($desktop, 35px) get-vw($desktop, 38px);
+  width: get-vw($desktop, 669px);
+  height: auto;
+  min-height: get-vw($desktop, 900px);
+  background-color: #DB8876;
+  mix-blend-mode: normal;
+  filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
+}
+
+#contactform header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contactform h2 {
+  width: get-vw($desktop, 449px);
+  font-size: get-vw($desktop, 64px);
+  font-weight: 400;
+  line-height: get-vw($desktop, 83.33px);
+}
+
+// #contactform form {
+//   margin-top: get-vw($desktop, 19px);
+// }
+
+#contactform .formData {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactform .formData[data-error]::after {
+  color: #e54858;
+  font-size: get-vw($desktop, 24px);
+  content: attr(data-error);
+  text-align: left;
+  line-height: get-vw($desktop, 46.87px);
+  transition: 0.3s;
+}
+
+#contactform label {
+  color: #312E2E;
+  font-size: get-vw($desktop, 36px);
+  line-height: get-vw($desktop, 46.87px);
+}
+
+#contactform input {
+  border-radius: get-vw($desktop, 5px);
+  padding-left: get-vw($desktop, 15px);
+  height: get-vw($desktop, 68px);
+  font-size: get-vw($desktop, 24px);
+  line-height: get-vw($desktop, 46.87px);
+}
+
+#contactform textarea {
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 15px);
+  height: get-vw($desktop, 170px);
+  font-size: get-vw($desktop, 24px);
+  line-height: get-vw($desktop, 46.87px);
+}
+
+#contactform button {
+  margin-top: get-vw($desktop, 26px);
+  border: none;
+  border-radius: get-vw($desktop, 5px);
+  padding: get-vw($desktop, 23px) get-vw($desktop, 50px);
+  width: get-vw($desktop, 170px);
+  height: get-vw($desktop, 69px);
+  background-color: #911C1C;
+  color: #FFF;
+  font-size: get-vw($desktop, 18px);
+  font-weight: 700;
+  line-height: get-vw($desktop, 23.44px);
+}
+
+#contactform .icon-close {
+  margin-top: get-vw($desktop, 20px);
+  background-color: #FFF;
+  cursor: pointer;
+}
