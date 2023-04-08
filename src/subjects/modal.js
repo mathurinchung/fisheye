@@ -1,12 +1,12 @@
-export default class ModalSubject {
+import Subject from './subject.js';
+
+export default class ModalSubject extends Subject {
   constructor() {
-    this.observers = [];
-    this.modalState = false;
+    super();
     this.modal = document.querySelector('.modal');
   }
 
   openModal() {
-      this.modalState = true;
       document.body.style.overflow = 'hidden';
       this.modal.classList.add('active');
 
@@ -14,19 +14,10 @@ export default class ModalSubject {
   }
 
   closeModal() {
-    this.modalState = false;
     document.body.style.overflow = 'auto';
     this.modal.classList.remove('active');
 
     this.dispatch();
-  }
-
-  add(observer) {
-    this.observers.push(observer);
-  }
-
-  remove(observer) {
-    this.observers.filter(obs => obs !== observer)
   }
 
   dispatch() {

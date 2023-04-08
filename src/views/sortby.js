@@ -1,6 +1,4 @@
 export default class SortbyViews {
-  constructor() {}
-
   SortbyDOM() {
     return `
       <h3>Trier par</h3>

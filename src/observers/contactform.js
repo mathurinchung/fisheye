@@ -14,21 +14,21 @@ export default class ContactFormObserver {
     document.querySelector('#contactform').addEventListener('submit', e => {
       if (this.contactFormContainer.handleSubmit(e)) {
         this.modalSubject.closeModal();
-        this.modalSubject.remove(this);
+        this.modalSubject.detach(this);
       }
     });
 
     const closeButtonElement = document.querySelector('.icon-close');
     closeButtonElement.addEventListener('click', () => {
       this.modalSubject.closeModal();
-      this.modalSubject.remove(this);
+      this.modalSubject.detach(this);
     });
   }
 
   init() {
     const contactFormButtonElement = document.querySelector('.contact-me');
     contactFormButtonElement.addEventListener('click', () => {
-      this.modalSubject.add(this);
+      this.modalSubject.attach(this);
       this.modalSubject.openModal();
 
       const name = document.querySelector('.info h2').textContent;

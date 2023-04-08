@@ -1,8 +1,6 @@
 import { checkInput, schemas } from '../utils/checkIsInvalid.js';
 
 export default class ContactFormContainer {
-  constructor() {}
-
   #handleIsInvalid() {
     return (checkInput('#firstName', schemas.letters) || checkInput('#lastName', schemas.letters) || checkInput('#email', schemas.email)) || checkInput('#message', schemas.lettersDigit) ? true : false;
   }

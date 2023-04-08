@@ -1,13 +1,13 @@
-export default class ObserversSubject {
+export default class Subject {
   constructor() {
     this.observers = [];
   }
 
-  add(observer) {
+  attach(observer) {
     this.observers.push(observer);
   }
 
-  remove(observer) {
+  detach(observer) {
     this.observers.filter(obs => obs !== observer)
   }
 

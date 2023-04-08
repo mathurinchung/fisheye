@@ -29,13 +29,13 @@ export default class LightboxObserver {
       });
 
       this.modalSubject.closeModal();
-      this.modalSubject.remove(this);
+      this.modalSubject.detach(this);
     });
   }
 
   init() {
     this.galleryElements.forEach(element => element.querySelector('.media').addEventListener('click', () => {
-      this.modalSubject.add(this);
+      this.modalSubject.attach(this);
       this.modalSubject.openModal();
 
       this.lighboxContainer = new LighboxContainer(this.galleryElements, element);

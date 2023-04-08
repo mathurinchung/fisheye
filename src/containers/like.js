@@ -1,6 +1,4 @@
 export default class LikeContainer {
-  constructor() {}
-
   handleLike(e) {
     const currentLike = e.target.closest('[data-user-like]');
     const likeNumber = currentLike.querySelector('.like-number');
