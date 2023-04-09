@@ -4,8 +4,7 @@
   border-radius: get-vw($desktop, 5px);
   padding: get-vw($desktop, 15px) get-vw($desktop, 35px) get-vw($desktop, 38px);
   width: get-vw($desktop, 669px);
-  height: auto;
-  min-height: get-vw($desktop, 900px);
+  height: get-vw($desktop, 900px);
   background-color: #DB8876;
   mix-blend-mode: normal;
   filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));

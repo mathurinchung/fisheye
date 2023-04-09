@@ -340,6 +340,7 @@ i {
 #lightbox img, #lightbox video {
   margin-left: 4.4444444444vw;
   margin-right: 4.4444444444vw;
+  border-radius: 0.3472222222vw;
   width: 72.9166666667vw;
   height: 62.5vw;
   background-color: #C4C4C4;
@@ -379,8 +380,7 @@ i {
   border-radius: 0.3472222222vw;
   padding: 1.0416666667vw 2.4305555556vw 2.6388888889vw;
   width: 46.4583333333vw;
-  height: auto;
-  min-height: 62.5vw;
+  height: 62.5vw;
   background-color: #DB8876;
   mix-blend-mode: normal;
   filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));

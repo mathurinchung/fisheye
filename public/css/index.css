@@ -104,9 +104,9 @@ i {
 }
 
 .photographers-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   column-gap: 14.375vw;
   row-gap: 4.8611111111vw;
   padding: 3.6805555556vw 3.125vw 1.3888888889vw;

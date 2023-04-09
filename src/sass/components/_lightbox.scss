@@ -8,6 +8,7 @@
 #lightbox img, #lightbox video {
   margin-left: get-vw($desktop, 64px);
   margin-right: get-vw($desktop, 64px);
+  border-radius: get-vw($desktop, 5px);
   width: get-vw($desktop, 1050px);
   height: get-vw($desktop, 900px);
   background-color: #C4C4C4;
